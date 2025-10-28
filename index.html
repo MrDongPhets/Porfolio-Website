@@ -5,23 +5,36 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MR. DongPhets — Portfolio (Demo)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w5Z1g9HhV9kTjxC4pVZ9VQwT9C0QoY+NfJf4WQ4lP1X6pA9xMZr9V4XWfS3g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body data-theme="light">
   <div class="container">
     <header>
       <div class="brand">MR. DONGPHETS</div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+      <nav id="mainNav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
       <div class="controls">
-        <div class="toggle" id="themeToggle">🌙</div>
+        <div class="theme-toggle" id="themeToggle"><i class="fa-solid fa-sun"></i></div>
+        <div class="toggle hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -94,18 +107,6 @@
           <p style="color:var(--muted);font-size:14px">Your satisfaction is my priority — delivering designs that not only look great but work perfectly for your brand.</p>
         </div>
       </div>
-
-      <div style="margin-top:30px;display:flex;align-items:center;gap:14px;justify-content:center">
-        <div class="timeline">
-          <div class="dot active">1</div>
-          <div class="line"></div>
-          <div class="dot">2</div>
-          <div class="line" style="background:#e5e7eb"></div>
-          <div class="dot">3</div>
-          <div class="line" style="background:#e5e7eb"></div>
-          <div class="dot">4</div>
-        </div>
-      </div>
     </section>
 
     <!-- REVIEWS -->
@@ -124,7 +125,7 @@
     <section id="contact" class="contact">
       <div>
         <h3>Contact</h3>
-        <p class="lead" style="max-width:540px">Interested in working together? Send a message and I’ll get back to you soon.</p>
+        <p class="lead" style="max-width:540px">Interested in working together? Send a message and I'll get back to you soon.</p>
 
         <form id="contactForm">
           <div class="field">
@@ -149,7 +150,7 @@
       <aside>
         <div style="background:var(--card);padding:22px;border-radius:10px;box-shadow:var(--shadow)">
           <h4 style="margin-top:0">Get a quote</h4>
-          <p style="color:var(--muted)">Tell me about your project — brief, timeline and budget — and I’ll return a tailored proposal.</p>
+          <p style="color:var(--muted)">Tell me about your project — brief, timeline and budget — and I'll return a tailored proposal.</p>
           <ul style="color:var(--muted);padding-left:18px">
             <li>Logo & Identity</li>
             <li>Brochure & Print</li>
@@ -162,21 +163,50 @@
     <footer>
       © <span id="year"></span> MR DongPhets • Crafted with care
     </footer>
+    
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop">↑</button>
   </div>
 
   <script>
+    // Hamburger menu toggle
+    (function(){
+      const hamburger = $('#hamburger');
+      const nav = $('#mainNav');
+      
+      hamburger.on('click', function(e){
+        e.stopPropagation();
+        $(this).toggleClass('active');
+        nav.toggleClass('active');
+      });
+      
+      // Close menu when clicking nav links
+      $('.nav-link').on('click', function(){
+        hamburger.removeClass('active');
+        nav.removeClass('active');
+      });
+      
+      // Close menu when clicking outside
+      $(document).on('click', function(e){
+        if(!$(e.target).closest('header').length){
+          hamburger.removeClass('active');
+          nav.removeClass('active');
+        }
+      });
+    })();
+
     // theme toggle
     (function(){
       const btn = $('#themeToggle');
       const root = $('body');
       const saved = localStorage.getItem('md-theme') || 'light';
       root.attr('data-theme', saved);
-      btn.text(saved==='light'?'🌙':'☀️');
+      btn.html(saved==='light'?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>');
       btn.on('click', function(){
         const cur = root.attr('data-theme');
         const next = cur === 'light' ? 'dark' : 'light';
         root.attr('data-theme', next);
-        btn.text(next==='light'?'🌙':'☀️');
+        btn.html(next==='light'?'<i class="fa-solid fa-moon"></i>':'<i class="fa-solid fa-sun"></i>');
         localStorage.setItem('md-theme', next);
       })
     })();
@@ -190,7 +220,6 @@
 
     function renderReviews(idx){
       const container = $('#carousel').empty();
-      // show 2 cards on wide screens, 1 on small
       const per = $(window).width() > 900 ? 2 : 1;
       for(let i=0;i<per;i++){
         const r = reviews[(idx+i) % reviews.length];
@@ -215,7 +244,7 @@
     $('#next').on('click', function(){ index=(index+1)%reviews.length; renderReviews(index); });
     $('#prev').on('click', function(){ index=(index-1+reviews.length)%reviews.length; renderReviews(index); });
 
-    // contact form (no backend) -> simulate
+    // contact form
     $('#contactForm').on('submit', function(e){
       e.preventDefault();
       const name = $('#name').val();
@@ -229,6 +258,25 @@
 
     // footer year
     $('#year').text(new Date().getFullYear());
+
+    // Scroll to top button
+    (function(){
+      const scrollBtn = $('#scrollTop');
+      
+      // Show/hide button based on scroll position
+      $(window).on('scroll', function(){
+        if($(window).scrollTop() > 300){
+          scrollBtn.addClass('visible');
+        } else {
+          scrollBtn.removeClass('visible');
+        }
+      });
+      
+      // Scroll to top when clicked
+      scrollBtn.on('click', function(){
+        $('html, body').animate({scrollTop: 0}, 0);
+      });
+    })();
 
     // small animation on scroll
     $(window).on('scroll resize', function(){
