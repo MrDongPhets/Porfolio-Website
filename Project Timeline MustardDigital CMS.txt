@@ -1,0 +1,100 @@
+Project Timeline: MustardDigital CMS Website
+Week 1: Planning & Setup (5-7 days)
+
+Day 1-2: Database schema design in Supabase
+
+Create tables: pages, services, portfolio_items, testimonials, contact_messages, users, settings
+Set up authentication and row-level security policies
+
+
+Day 3-4: Project structure setup
+
+Create PHP MVC-like folder structure (admin/, public/, includes/, config/)
+Set up Supabase PHP client/connection
+Configure environment variables
+
+
+Day 5-7: Authentication system
+
+Admin login/logout functionality
+Session management
+Password hashing and security
+
+
+
+Week 2: Admin CMS Development (7-10 days)
+
+Day 8-10: Admin dashboard layout
+
+Create admin template with sidebar navigation
+Dashboard overview with statistics
+Responsive admin interface
+
+
+Day 11-13: Content management modules
+
+Hero section editor (text, images)
+About section management
+Services CRUD operations
+Work process steps editor
+
+
+Day 14-17: Portfolio & Reviews
+
+Portfolio items upload and management
+Image upload system
+Testimonials/reviews CRUD
+Star rating system
+
+
+
+Week 3: Frontend Integration (7-10 days)
+
+Day 18-20: Convert static HTML to dynamic PHP
+
+Create reusable header/footer components
+Integrate Supabase data fetching
+Dynamic navigation from database
+
+
+Day 21-24: Section rendering
+
+Hero section from database
+About section dynamic content
+Services grid from database
+Portfolio gallery from uploaded items
+Reviews carousel from database
+
+
+Day 25-27: Contact form integration
+
+Save submissions to Supabase
+Email notification system (optional)
+Form validation and sanitization
+
+
+
+Week 4: Polish & Launch (5-7 days)
+
+Day 28-29: Site settings management
+
+Theme toggle persistence
+SEO metadata editor
+Social media links
+Contact information
+
+
+Day 30-31: Testing & optimization
+
+Cross-browser testing
+Mobile responsiveness check
+Security testing (SQL injection prevention, XSS)
+Performance optimization
+
+
+Day 32-34: Deployment & documentation
+
+Deploy to hosting (with PHP support)
+Admin user guide
+Code documentation
+Backup strategy

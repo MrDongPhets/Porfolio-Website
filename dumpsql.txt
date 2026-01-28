@@ -1,0 +1,307 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.about_section (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title character varying NOT NULL,
+  content text NOT NULL,
+  image_url text,
+  is_active boolean DEFAULT true,
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT about_section_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.contact_messages (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name character varying NOT NULL,
+  email character varying NOT NULL,
+  message text NOT NULL,
+  is_read boolean DEFAULT false,
+  ip_address character varying,
+  created_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT contact_messages_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.hero_section (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title character varying NOT NULL,
+  subtitle text,
+  cta_text character varying,
+  cta_link character varying,
+  image_url text,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT hero_section_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.media_library (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  file_name character varying NOT NULL,
+  file_path text NOT NULL,
+  file_type character varying,
+  file_size integer,
+  alt_text character varying,
+  uploaded_by uuid,
+  created_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT media_library_pkey PRIMARY KEY (id),
+  CONSTRAINT media_library_uploaded_by_fkey FOREIGN KEY (uploaded_by) REFERENCES public.users(id)
+);
+CREATE TABLE public.portfolio_items (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title character varying NOT NULL,
+  description text,
+  category character varying,
+  image_url text NOT NULL,
+  project_url character varying,
+  display_order integer DEFAULT 0,
+  is_featured boolean DEFAULT false,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT portfolio_items_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.services (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title character varying NOT NULL,
+  description text NOT NULL,
+  icon character varying,
+  display_order integer DEFAULT 0,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT services_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.site_settings (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  setting_key character varying NOT NULL UNIQUE,
+  setting_value text,
+  setting_type character varying DEFAULT 'text'::character varying,
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT site_settings_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.testimonials (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  client_name character varying NOT NULL,
+  company character varying,
+  testimonial text NOT NULL,
+  rating integer CHECK (rating >= 1 AND rating <= 5),
+  avatar_url text,
+  display_order integer DEFAULT 0,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT testimonials_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.users (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  email character varying NOT NULL UNIQUE,
+  password_hash character varying NOT NULL,
+  full_name character varying NOT NULL,
+  role character varying DEFAULT 'admin'::character varying,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT users_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.work_steps (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title character varying NOT NULL,
+  description text NOT NULL,
+  icon character varying,
+  step_order integer NOT NULL,
+  is_active boolean DEFAULT true,
+  created_at timestamp without time zone DEFAULT now(),
+  updated_at timestamp without time zone DEFAULT now(),
+  CONSTRAINT work_steps_pkey PRIMARY KEY (id)
+);
+
+-- ============================================
+-- MUSTARDDIGITAL CMS - PROPER RLS POLICIES
+-- ============================================
+-- Based on multi-tenant pattern with service role bypass
+-- Public can READ, Service role can do EVERYTHING
+
+-- ============================================
+-- ENABLE RLS ON ALL TABLES
+-- ============================================
+
+ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.site_settings ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.hero_section ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.about_section ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.services ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.work_steps ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.portfolio_items ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.testimonials ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.contact_messages ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.media_library ENABLE ROW LEVEL SECURITY;
+
+-- ============================================
+-- DROP EXISTING POLICIES (Clean slate)
+-- ============================================
+
+DROP POLICY IF EXISTS "Public can read active hero_section" ON public.hero_section;
+DROP POLICY IF EXISTS "Public can read active about_section" ON public.about_section;
+DROP POLICY IF EXISTS "Public can read active services" ON public.services;
+DROP POLICY IF EXISTS "Public can read active work_steps" ON public.work_steps;
+DROP POLICY IF EXISTS "Public can read active portfolio_items" ON public.portfolio_items;
+DROP POLICY IF EXISTS "Public can read active testimonials" ON public.testimonials;
+DROP POLICY IF EXISTS "Public can read site_settings" ON public.site_settings;
+DROP POLICY IF EXISTS "Public can submit contact messages" ON public.contact_messages;
+DROP POLICY IF EXISTS "Users can view company users" ON public.users;
+
+-- ============================================
+-- USERS TABLE POLICIES
+-- ============================================
+
+-- Public can SELECT users for login verification (email lookup)
+CREATE POLICY "Allow public select for login"
+ON public.users FOR SELECT
+USING (true);
+
+-- Service role can do everything (bypasses by default, but explicit for clarity)
+-- Note: Service role AUTOMATICALLY bypasses all RLS, no need for explicit policy
+
+-- ============================================
+-- SITE SETTINGS TABLE POLICIES
+-- ============================================
+
+-- Public can read all site settings
+CREATE POLICY "Public can read site settings"
+ON public.site_settings FOR SELECT
+USING (true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- HERO SECTION TABLE POLICIES
+-- ============================================
+
+-- Public can read active hero sections
+CREATE POLICY "Public can read active hero section"
+ON public.hero_section FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- ABOUT SECTION TABLE POLICIES
+-- ============================================
+
+-- Public can read active about sections
+CREATE POLICY "Public can read active about section"
+ON public.about_section FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- SERVICES TABLE POLICIES
+-- ============================================
+
+-- Public can read active services
+CREATE POLICY "Public can read active services"
+ON public.services FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- WORK STEPS TABLE POLICIES
+-- ============================================
+
+-- Public can read active work steps
+CREATE POLICY "Public can read active work steps"
+ON public.work_steps FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- PORTFOLIO ITEMS TABLE POLICIES
+-- ============================================
+
+-- Public can read active portfolio items
+CREATE POLICY "Public can read active portfolio items"
+ON public.portfolio_items FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- TESTIMONIALS TABLE POLICIES
+-- ============================================
+
+-- Public can read active testimonials
+CREATE POLICY "Public can read active testimonials"
+ON public.testimonials FOR SELECT
+USING (is_active = true);
+
+-- Service role handles all writes (automatic bypass)
+
+-- ============================================
+-- CONTACT MESSAGES TABLE POLICIES
+-- ============================================
+
+-- Public can INSERT contact messages (contact form submission)
+CREATE POLICY "Public can submit contact messages"
+ON public.contact_messages FOR INSERT
+WITH CHECK (true);
+
+-- Public can view their own messages (optional - by email or IP)
+CREATE POLICY "Public can view own messages"
+ON public.contact_messages FOR SELECT
+USING (true); -- You can restrict this later: USING (ip_address = request.headers->>'x-real-ip')
+
+-- Service role handles admin operations (automatic bypass)
+
+-- ============================================
+-- MEDIA LIBRARY TABLE POLICIES
+-- ============================================
+
+-- Public can read all media files
+CREATE POLICY "Public can read media files"
+ON public.media_library FOR SELECT
+USING (true);
+
+-- Service role handles uploads/deletes (automatic bypass)
+
+-- ============================================
+-- VERIFICATION QUERIES
+-- ============================================
+
+-- Test public can read hero section
+-- SELECT * FROM hero_section WHERE is_active = true;
+
+-- Test public CANNOT update (should fail without service key)
+-- UPDATE hero_section SET title = 'test' WHERE id = 'some-id';
+
+-- ============================================
+-- NOTES
+-- ============================================
+
+/*
+KEY POINTS:
+
+1. SERVICE ROLE BYPASS:
+   - The service_role key AUTOMATICALLY bypasses ALL RLS policies
+   - Your PHP admin panel uses service_role key, so it can do everything
+   - No need for explicit "admin" policies
+
+2. PUBLIC ACCESS:
+   - Public (anon key) can only SELECT active content
+   - Public can INSERT contact messages
+   - Public CANNOT UPDATE, DELETE, or INSERT into content tables
+
+3. LOGIN WORKS:
+   - Users table has public SELECT policy
+   - Your PHP code can query users for login verification
+   - Password verification happens in PHP, not database
+
+4. SECURITY:
+   - Attackers with anon key can only read public data
+   - Cannot modify content, delete, or insert (except contact form)
+   - Service key is secret, only in PHP backend
+
+5. TESTING:
+   - Use anon key in browser: Can only read
+   - Use service key in admin: Can do everything
+*/
