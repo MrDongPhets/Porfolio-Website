@@ -344,7 +344,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For bug reports and feature requests, please use the [GitHub Issues](https://github.com/yourusername/mustarddigital-cms/issues) page.
 
 For general questions, contact us at support@mustarddigital.com
 
