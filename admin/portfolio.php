@@ -549,6 +549,13 @@ if ($filterCategory !== 'all') {
     padding: 24px;
 }
 
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -559,6 +566,43 @@ if ($filterCategory !== 'all') {
     font-weight: 600;
     color: var(--gray-700);
     font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(24, 77, 55, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-text {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--gray-500);
+}
+
+.form-text a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.form-text a:hover {
+    text-decoration: underline;
 }
 
 .checkbox-label {

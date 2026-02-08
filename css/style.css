@@ -612,3 +612,85 @@ footer {
     height: 250px;
   }
 }
+
+/* ==========================================
+   SERVICES SECTION - Add to style.css
+   ========================================== */
+
+/* Services on Homepage */
+.services-homepage {
+  padding: min(5rem, 8%);
+  text-align: center;
+  background: var(--bg);
+}
+
+.services-homepage h3 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.services-homepage p.lead {
+  color: var(--muted);
+  max-width: 680px;
+  margin: 10px auto 40px;
+}
+
+.services-grid-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.service-item {
+  background: var(--card);
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+.service-icon-home {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.service-item:hover .service-icon-home {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.service-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.service-item p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid-home {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-home {
+    grid-template-columns: 1fr;
+  }
+}
