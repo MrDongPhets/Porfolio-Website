@@ -332,7 +332,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **MustardDigital Team**
-- Website: [mustarddigital.com](https://mustarddigital.com)
+- Website: [mustarddigitals.com](https://mustarddigitals.com/)
 - Email: hello@mustarddigital.com
 
 ## 🙏 Acknowledgments
