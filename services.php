@@ -34,9 +34,11 @@ include 'includes/site-header.php';
                 <?php foreach ($services as $service): ?>
                     <div class="service-card-full">
                         <div class="service-icon-large">
-                            <?php echo $service['icon'] ?: '⚙️'; ?>
+                           <i class="<?php echo $service['icon'] ?: '⚙️'; ?>"></i> 
                         </div>
-                        <h3><?php echo e($service['title']); ?></h3>
+                        <h3 class="service-title">
+  <?php echo e($service['title'] ?? ''); ?>
+</h3>
                         <p><?php echo e($service['description']); ?></p>
                     </div>
                 <?php endforeach; ?>
