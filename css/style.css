@@ -1,26 +1,82 @@
 :root {
+  /* Primary Brand Colors */
+  --primary: #EBB92F;
+  --primary-dark: #d4a425;
+  --primary-light: #f0c750;
+  --primary-rgb: 235, 185, 47;
+  
+  /* Secondary/Text Colors */
+  --secondary: #53504B;
+  --secondary-dark: #3a3834;
+  --secondary-light: #6b6762;
+  
+  /* Background/Dark */
+  --dark: #15161E;
+  --dark-light: #1f2029;
+  --dark-lighter: #2a2b35;
+  
+  /* Light Theme Colors */
   --bg: #ffffff;
-  --text: #111827;
-  --muted: #6b7280;
-  --accent: #184d37;
-  --accent-2: #FDFFF5;
-  --card: #f7faf6;
+  --text: #15161E;
+  --text-light: #53504B;
+  --muted: #6b6762;
+  --accent: #EBB92F;
+  --accent-2: #FFF9E6;
+  --card: #f9f9f8;
   --glass: rgba(255, 255, 255, 0.6);
-  --shadow: 0 10px 30px rgba(19, 25, 24, 0.06);
+  --shadow: 0 10px 30px rgba(21, 22, 30, 0.08);
+  --border: #e5e4e1;
+  
+  /* Neutral Grays */
+  --gray-50: #fafaf9;
+  --gray-100: #f5f5f4;
+  --gray-200: #e7e5e4;
+  --gray-300: #d6d3d1;
+  --gray-400: #a8a29e;
+  --gray-500: #78716c;
+  --gray-600: #57534e;
+  --gray-700: #44403c;
+  --gray-800: #292524;
+  --gray-900: #1c1917;
+  
+  /* Semantic Colors */
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+  --info: #3b82f6;
+  --info-light: #dbeafe;
+  
+  /* Overlay & Effects */
+  --overlay: rgba(21, 22, 30, 0.7);
+  --overlay-light: rgba(21, 22, 30, 0.3);
+  --gradient-primary: linear-gradient(135deg, #EBB92F 0%, #d4a425 100%);
+  --gradient-dark: linear-gradient(135deg, #15161E 0%, #2a2b35 100%);
+  --gradient-overlay: linear-gradient(to top, rgba(21, 22, 30, 0.95) 0%, rgba(21, 22, 30, 0.7) 50%, rgba(21, 22, 30, 0) 100%);
 }
+
+/* Dark Theme Colors */
 [data-theme="dark"] {
-  --bg: #0b0f0e;
-  --text: #e6f0ea;
-  --muted: #9aa7a0;
-  --accent: #6bb08b;
-  --accent-2: #072317;
-  --card: #07110f;
-  --glass: rgba(8, 12, 10, 0.45);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --bg: #15161E;
+  --text: #f5f5f4;
+  --text-light: #e7e5e4;
+  --muted: #a8a29e;
+  --accent: #EBB92F;
+  --accent-2: #2a2518;
+  --card: #1f2029;
+  --glass: rgba(31, 32, 41, 0.6);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --border: #2a2b35;
+  
+  --overlay: rgba(21, 22, 30, 0.9);
+  --overlay-light: rgba(21, 22, 30, 0.5);
 }
 
 a{
   text-decoration: unset !important;
+  color: var(--accent);
 }
 
 * {

@@ -66,11 +66,11 @@ include 'includes/site-header.php';
         </p>
         
         <div class="hero-cta-buttons" data-aos="fade-up" data-aos-delay="400">
-          <button class="btn btn-primary-modern" id="cta">
+          <button class="btn btn-primary-modern" onclick="window.location.href='contact.php'">
             <?php echo e($hero['cta_text'] ?? 'Get Started Today'); ?>
             <i class="fas fa-arrow-right"></i>
           </button>
-          <a href="#portfolio" class="btn btn-outline-modern">
+          <a href="portfolio.php" class="btn btn-outline-modern">
             <i class="fas fa-play-circle"></i> View Our Work
           </a>
         </div>
@@ -164,107 +164,109 @@ include 'includes/site-header.php';
 
 <!-- SERVICES SECTION - HARDCODED -->
     <section id="services" class="services-modern">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Services We Offer</h2>
-        <p class="section-subtitle">Comprehensive design solutions tailored to your needs</p>
-      </div>
-
-      <div class="services-grid-modern">
-        <!-- Service 1: Web Design & Development -->
-        <div class="service-card-modern" data-aos="fade-up" data-aos-delay="0">
-          <div class="service-number">01</div>
-          <div class="service-icon-modern">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <h3 class="service-title">Web Design & Development</h3>
-          <p class="service-description">Custom websites and web applications that combine stunning design with powerful functionality.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Responsive design</li>
-            <li><i class="fas fa-check"></i> Fast performance</li>
-            <li><i class="fas fa-check"></i> SEO optimized</li>
-          </ul>
-          <a href="<?php echo baseUrl('web-design.php'); ?>" class="service-link-btn">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
+      <div class="services-modern-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Services We Offer</h2>
+          <p class="section-subtitle">Comprehensive design solutions tailored to your needs</p>
         </div>
-
-        <!-- Service 2: Branding & Creative Design -->
-        <div class="service-card-modern" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-number">02</div>
-          <div class="service-icon-modern">
-            <i class="fas fa-palette"></i>
+  
+        <div class="services-grid-modern">
+          <!-- Service 1: Web Design & Development -->
+          <div class="service-card-modern" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-number">01</div>
+            <div class="service-icon-modern">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3 class="service-title">Web Design & Development</h3>
+            <p class="service-description">Custom websites and web applications that combine stunning design with powerful functionality.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Responsive design</li>
+              <li><i class="fas fa-check"></i> Fast performance</li>
+              <li><i class="fas fa-check"></i> SEO optimized</li>
+            </ul>
+            <a href="<?php echo baseUrl('web-design.php'); ?>" class="service-link-btn">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h3 class="service-title">Branding & Creative Design</h3>
-          <p class="service-description">Logo design, brand identity systems, and marketing visuals that strengthen brand recognition.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Logo design</li>
-            <li><i class="fas fa-check"></i> Brand guidelines</li>
-            <li><i class="fas fa-check"></i> Marketing materials</li>
-          </ul>
-          <a href="<?php echo baseUrl('branding.php'); ?>" class="service-link-btn">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- Service 3: Video Editing & Multimedia -->
-        <div class="service-card-modern" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-number">03</div>
-          <div class="service-icon-modern">
-            <i class="fas fa-video"></i>
+  
+          <!-- Service 2: Branding & Creative Design -->
+          <div class="service-card-modern" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-number">02</div>
+            <div class="service-icon-modern">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="service-title">Branding & Creative Design</h3>
+            <p class="service-description">Logo design, brand identity systems, and marketing visuals that strengthen brand recognition.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Logo design</li>
+              <li><i class="fas fa-check"></i> Brand guidelines</li>
+              <li><i class="fas fa-check"></i> Marketing materials</li>
+            </ul>
+            <a href="<?php echo baseUrl('branding.php'); ?>" class="service-link-btn">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h3 class="service-title">Video Editing & Multimedia</h3>
-          <p class="service-description">Short-form social videos, long-form content editing, promotional assets, and branded video production.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Social media videos</li>
-            <li><i class="fas fa-check"></i> YouTube editing</li>
-            <li><i class="fas fa-check"></i> Motion graphics</li>
-          </ul>
-          <a href="<?php echo baseUrl('video-editing.php'); ?>" class="service-link-btn">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- Service 4: Content Creation & Media -->
-        <div class="service-card-modern" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-number">04</div>
-          <div class="service-icon-modern">
-            <i class="fas fa-images"></i>
+  
+          <!-- Service 3: Video Editing & Multimedia -->
+          <div class="service-card-modern" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-number">03</div>
+            <div class="service-icon-modern">
+              <i class="fas fa-video"></i>
+            </div>
+            <h3 class="service-title">Video Editing & Multimedia</h3>
+            <p class="service-description">Short-form social videos, long-form content editing, promotional assets, and branded video production.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Social media videos</li>
+              <li><i class="fas fa-check"></i> YouTube editing</li>
+              <li><i class="fas fa-check"></i> Motion graphics</li>
+            </ul>
+            <a href="<?php echo baseUrl('video-editing.php'); ?>" class="service-link-btn">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h3 class="service-title">Content Creation & Media</h3>
-          <p class="service-description">Visual content, marketing graphics, multimedia assets, and branded materials for digital engagement.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Social media content</li>
-            <li><i class="fas fa-check"></i> Marketing graphics</li>
-            <li><i class="fas fa-check"></i> Infographics</li>
-          </ul>
-          <a href="<?php echo baseUrl('content-creation.php'); ?>" class="service-link-btn">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <!-- Service 5: Administrative Support -->
-        <div class="service-card-modern" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-number">05</div>
-          <div class="service-icon-modern">
-            <i class="fas fa-user-cog"></i>
+  
+          <!-- Service 4: Content Creation & Media -->
+          <div class="service-card-modern" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-number">04</div>
+            <div class="service-icon-modern">
+              <i class="fas fa-images"></i>
+            </div>
+            <h3 class="service-title">Content Creation & Media</h3>
+            <p class="service-description">Visual content, marketing graphics, multimedia assets, and branded materials for digital engagement.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Social media content</li>
+              <li><i class="fas fa-check"></i> Marketing graphics</li>
+              <li><i class="fas fa-check"></i> Infographics</li>
+            </ul>
+            <a href="<?php echo baseUrl('content-creation.php'); ?>" class="service-link-btn">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <h3 class="service-title">Administrative & Executive Support</h3>
-          <p class="service-description">Virtual assistance, operational coordination, documentation, CRM management, and workflow optimization.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Email management</li>
-            <li><i class="fas fa-check"></i> CRM coordination</li>
-            <li><i class="fas fa-check"></i> Task automation</li>
-          </ul>
-          <a href="<?php echo baseUrl('admin-support.php'); ?>" class="service-link-btn">
-            Learn More <i class="fas fa-arrow-right"></i>
-          </a>
+  
+          <!-- Service 5: Administrative Support -->
+          <div class="service-card-modern" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-number">05</div>
+            <div class="service-icon-modern">
+              <i class="fas fa-user-cog"></i>
+            </div>
+            <h3 class="service-title">Administrative & Executive Support</h3>
+            <p class="service-description">Virtual assistance, operational coordination, documentation, CRM management, and workflow optimization.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Email management</li>
+              <li><i class="fas fa-check"></i> CRM coordination</li>
+              <li><i class="fas fa-check"></i> Task automation</li>
+            </ul>
+            <a href="<?php echo baseUrl('admin-support.php'); ?>" class="service-link-btn">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div style="text-align:center; margin-top:48px;" data-aos="fade-up">
-        <a href="<?php echo baseUrl('services.php'); ?>" class="btn btn-outline-modern">
-          View All Services <i class="fas fa-arrow-right"></i>
-        </a>
+  
+        <!-- <div style="text-align:center; margin-top:48px;" data-aos="fade-up">
+          <a href="<?php // echo baseUrl('services.php'); ?>" class="btn btn-outline-modern">
+            View All Services <i class="fas fa-arrow-right"></i>
+          </a>
+        </div> -->
       </div>
     </section>
 
@@ -415,127 +417,129 @@ include 'includes/site-header.php';
 
     <!-- TESTIMONIALS SECTION - MODERN CARDS -->
     <section id="reviews" class="testimonials-modern">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">What Clients Say About Us</h2>
-        <p class="section-subtitle">Don't just take our word for it</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <?php if (!empty($testimonials)): ?>
-          <?php foreach (array_slice($testimonials, 0, 3) as $index => $testimonial): ?>
-            <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+      <div class="testimonials-modern-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">What Clients Say About Us</h2>
+          <p class="section-subtitle">Don't just take our word for it</p>
+        </div>
+  
+        <div class="testimonials-grid">
+          <?php if (!empty($testimonials)): ?>
+            <?php foreach (array_slice($testimonials, 0, 3) as $index => $testimonial): ?>
+              <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
+                <div class="testimonial-rating">
+                  <div class="rating-stars">
+                    <?php for ($i = 0; $i < 5; $i++): ?>
+                      <i class="fas fa-star <?php echo $i < $testimonial['rating'] ? 'active' : ''; ?>"></i>
+                    <?php endfor; ?>
+                  </div>
+                  <span class="rating-number"><?php echo $testimonial['rating']; ?>.0</span>
+                  <span class="rating-text">Excellent</span>
+                </div>
+                
+                <p class="testimonial-text"><?php echo e($testimonial['testimonial']); ?></p>
+                
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <?php if (!empty($testimonial['avatar_url'])): ?>
+                      <img src="<?php echo e(getImageUrl($testimonial['avatar_url'])); ?>" alt="<?php echo e($testimonial['client_name']); ?>">
+                    <?php else: ?>
+                      <?php 
+                        $initials = implode('', array_map(function($word) { 
+                          return strtoupper(substr($word, 0, 1)); 
+                        }, array_slice(explode(' ', $testimonial['client_name']), 0, 2)));
+                      ?>
+                      <div class="avatar-placeholder"><?php echo $initials; ?></div>
+                    <?php endif; ?>
+                  </div>
+                  <div class="author-info">
+                    <h4><?php echo e($testimonial['client_name']); ?></h4>
+                    <p><?php echo e($testimonial['company'] ?? 'Verified Customer'); ?></p>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <!-- Temporary testimonials -->
+            <div class="testimonial-card-modern" data-aos="fade-up">
               <div class="testimonial-rating">
                 <div class="rating-stars">
-                  <?php for ($i = 0; $i < 5; $i++): ?>
-                    <i class="fas fa-star <?php echo $i < $testimonial['rating'] ? 'active' : ''; ?>"></i>
-                  <?php endfor; ?>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
                 </div>
-                <span class="rating-number"><?php echo $testimonial['rating']; ?>.0</span>
+                <span class="rating-number">4.9</span>
                 <span class="rating-text">Excellent</span>
               </div>
               
-              <p class="testimonial-text"><?php echo e($testimonial['testimonial']); ?></p>
+              <p class="testimonial-text">"Great project! people who truly understand the essence of brand design. They took time to get to know our team, our values, and our vision. I can't recommend them enough."</p>
               
               <div class="testimonial-author">
                 <div class="author-avatar">
-                  <?php if (!empty($testimonial['avatar_url'])): ?>
-                    <img src="<?php echo e(getImageUrl($testimonial['avatar_url'])); ?>" alt="<?php echo e($testimonial['client_name']); ?>">
-                  <?php else: ?>
-                    <?php 
-                      $initials = implode('', array_map(function($word) { 
-                        return strtoupper(substr($word, 0, 1)); 
-                      }, array_slice(explode(' ', $testimonial['client_name']), 0, 2)));
-                    ?>
-                    <div class="avatar-placeholder"><?php echo $initials; ?></div>
-                  <?php endif; ?>
+                  <div class="avatar-placeholder">SM</div>
                 </div>
                 <div class="author-info">
-                  <h4><?php echo e($testimonial['client_name']); ?></h4>
-                  <p><?php echo e($testimonial['company'] ?? 'Verified Customer'); ?></p>
+                  <h4>Sarah M.</h4>
+                  <p>CEO, Tech Startup</p>
                 </div>
               </div>
             </div>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <!-- Temporary testimonials -->
-          <div class="testimonial-card-modern" data-aos="fade-up">
-            <div class="testimonial-rating">
-              <div class="rating-stars">
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
+            
+            <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-rating">
+                <div class="rating-stars">
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                </div>
+                <span class="rating-number">4.7</span>
+                <span class="rating-text">Great</span>
               </div>
-              <span class="rating-number">4.9</span>
-              <span class="rating-text">Excellent</span>
+              
+              <p class="testimonial-text">"I can't say enough great things about this design team! From our very first call, they were professional, creative, and genuinely excited about our project."</p>
+              
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <div class="avatar-placeholder">DJ</div>
+                </div>
+                <div class="author-info">
+                  <h4>David J.</h4>
+                  <p>Marketing Director</p>
+                </div>
+              </div>
             </div>
             
-            <p class="testimonial-text">"Great project! people who truly understand the essence of brand design. They took time to get to know our team, our values, and our vision. I can't recommend them enough."</p>
-            
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <div class="avatar-placeholder">SM</div>
+            <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
+              <div class="testimonial-rating">
+                <div class="rating-stars">
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                  <i class="fas fa-star active"></i>
+                </div>
+                <span class="rating-number">4.8</span>
+                <span class="rating-text">Amazing</span>
               </div>
-              <div class="author-info">
-                <h4>Sarah M.</h4>
-                <p>CEO, Tech Startup</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-rating">
-              <div class="rating-stars">
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-              </div>
-              <span class="rating-number">4.7</span>
-              <span class="rating-text">Great</span>
-            </div>
-            
-            <p class="testimonial-text">"I can't say enough great things about this design team! From our very first call, they were professional, creative, and genuinely excited about our project."</p>
-            
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <div class="avatar-placeholder">DJ</div>
-              </div>
-              <div class="author-info">
-                <h4>David J.</h4>
-                <p>Marketing Director</p>
+              
+              <p class="testimonial-text">"I can confidently say that our project exceeded all expectations thanks to the design agency. Their dedication to ensuring every detail was right."</p>
+              
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <div class="avatar-placeholder">EL</div>
+                </div>
+                <div class="author-info">
+                  <h4>Emma L.</h4>
+                  <p>Product Manager</p>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-rating">
-              <div class="rating-stars">
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-                <i class="fas fa-star active"></i>
-              </div>
-              <span class="rating-number">4.8</span>
-              <span class="rating-text">Amazing</span>
-            </div>
-            
-            <p class="testimonial-text">"I can confidently say that our project exceeded all expectations thanks to the design agency. Their dedication to ensuring every detail was right."</p>
-            
-            <div class="testimonial-author">
-              <div class="author-avatar">
-                <div class="avatar-placeholder">EL</div>
-              </div>
-              <div class="author-info">
-                <h4>Emma L.</h4>
-                <p>Product Manager</p>
-              </div>
-            </div>
-          </div>
-        <?php endif; ?>
+          <?php endif; ?>
+        </div>
       </div>
     </section>
 
