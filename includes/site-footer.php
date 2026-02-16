@@ -13,6 +13,7 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
 
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   
   <script>
     // Initialize AOS
@@ -23,36 +24,48 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
       offset: 100
     });
 
-    // Hamburger menu toggle
-    (function(){
-      const hamburger = $('#hamburger');
-      const nav = $('#mainNav');
-      
-      hamburger.on('click', function(e){
-        e.stopPropagation();
-        $(this).toggleClass('active');
-        nav.toggleClass('active');
-      });
-      
-      $('.nav-link').on('click', function(){
-        hamburger.removeClass('active');
-        nav.removeClass('active');
-      });
-      
-      $(document).on('click', function(e){
-        if(!$(e.target).closest('header').length){
-          hamburger.removeClass('active');
-          nav.removeClass('active');
-        }
-      });
-    })();
+// Hamburger menu toggle
+(function(){
+  const hamburger = $('#hamburger');
+  const nav = $('#mainNav');
+  const navDropdown = $('.nav-dropdown');
+  
+  hamburger.on('click', function(e){
+    e.stopPropagation();
+    $(this).toggleClass('active');
+    nav.toggleClass('active');
+    
+    // Close dropdown when closing menu
+    if (!nav.hasClass('active')) {
+      navDropdown.removeClass('active');
+    }
+  });
+  
+  // Close menu when clicking regular nav links
+  $('.nav-link:not(.dropdown-toggle)').on('click', function(){
+    hamburger.removeClass('active');
+    nav.removeClass('active');
+    navDropdown.removeClass('active');
+  });
+  
+  // Close menu when clicking outside
+  $(document).on('click', function(e){
+    if(!$(e.target).closest('header').length){
+      hamburger.removeClass('active');
+      nav.removeClass('active');
+      navDropdown.removeClass('active');
+    }
+  });
+})();
 
     // Dropdown menu toggle
 (function(){
   const dropdownToggle = $('.dropdown-toggle');
   const navDropdown = $('.nav-dropdown');
+  const mainNav = $('#mainNav');
+  const hamburger = $('#hamburger');
   
-  // Desktop hover
+  // Desktop hover behavior
   if ($(window).width() > 768) {
     navDropdown.on('mouseenter', function() {
       $(this).addClass('active');
@@ -63,11 +76,22 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
     });
   }
   
-  // Mobile click
+  // Mobile click behavior
   dropdownToggle.on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
     if ($(window).width() <= 768) {
-      e.preventDefault();
       navDropdown.toggleClass('active');
+    }
+  });
+  
+  // Close dropdown when clicking a dropdown item on mobile
+  $('.dropdown-item').on('click', function() {
+    if ($(window).width() <= 768) {
+      navDropdown.removeClass('active');
+      mainNav.removeClass('active');
+      hamburger.removeClass('active');
     }
   });
   
@@ -76,6 +100,19 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
     if (!$(e.target).closest('.nav-dropdown').length) {
       navDropdown.removeClass('active');
     }
+  });
+  
+  // Handle window resize - switch between mobile and desktop behavior
+  let resizeTimer;
+  $(window).on('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      if ($(window).width() > 768) {
+        navDropdown.removeClass('active');
+        mainNav.removeClass('active');
+        hamburger.removeClass('active');
+      }
+    }, 250);
   });
 })();
 

@@ -1,7 +1,8 @@
 
+// Contact form - Web3Forms + Database with SweetAlert2
+$(document).ready(function() {
 
-
-// reviews carousel - dynamic data
+    // reviews carousel - dynamic data
 function renderReviews(idx){
     const container = $('#carousel').empty();
     
@@ -88,5 +89,90 @@ $(window).on('scroll resize', function(){
     $('.review-card').each(function(i,el){
     const r = $(el).offset().top - $(window).scrollTop();
     if(r < $(window).height()*0.85) $(el).css('transform','translateY(0)');
+    });
+});
+
+
+$('#submitContactBtn').on('click', async function(){
+        const form = document.getElementById('contactForm');
+        
+        // Validate form
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+        
+        const submitBtn = $(this);
+        const originalHtml = submitBtn.html();
+        
+        submitBtn.html('<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>').prop('disabled', true);
+        
+        const formData = new FormData(form);
+        
+        try {
+            // Send to Web3Forms (primary submission)
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            console.log('Web3Forms response:', data);
+            
+            if (data.success) {
+                // Try to save to database (optional, don't fail if this errors)
+                try {
+                    const dbData = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        message: formData.get('message')
+                    };
+                    
+                    const dbResponse = await fetch('<?php echo baseUrl("contact-handler.php"); ?>', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(dbData)
+                    });
+                    
+                    if (dbResponse.ok) {
+                        console.log('✓ Message saved to database');
+                    } else {
+                        console.warn('⚠ Database save failed (non-critical)');
+                    }
+                } catch (dbError) {
+                    // Database save failed, but that's OK - Web3Forms already sent the email
+                    console.warn('⚠ Database save error (non-critical):', dbError);
+                }
+                
+                // Show success (Web3Forms succeeded)
+                await Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    html: `<p>Thank you <strong>${formData.get('name')}</strong>!</p>
+                           <p>We'll get back to you within 24 hours.</p>`,
+                    confirmButtonText: 'Great!',
+                    confirmButtonColor: '#EBB92F'
+                });
+                
+                form.reset();
+                
+            } else {
+                throw new Error(data.message || 'Submission failed');
+            }
+        } catch (error) {
+            console.error('Contact form error:', error);
+            
+            await Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Failed to send message. Please try again or email us directly.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#EBB92F'
+            });
+        } finally {
+            submitBtn.html(originalHtml).prop('disabled', false);
+        }
     });
 });

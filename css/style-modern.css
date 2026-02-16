@@ -1115,6 +1115,36 @@ h1, h2, h3 {
   transform: translateY(-3px);
 }
 
+.social-links-contact{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-links-contact a {
+  width: 48px;
+  height: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-links-contact a:hover {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
 .contact-form-modern {
   background: var(--card);
   padding: 48px;

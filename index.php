@@ -96,7 +96,7 @@ include 'includes/site-header.php';
       </div>
 
       <!-- Trusted brands section -->
-      <div class="trusted-brands" data-aos="fade-up" data-aos-delay="800">
+      <!-- <div class="trusted-brands" data-aos="fade-up" data-aos-delay="800">
         <p class="trusted-text">TRUSTED BY LEADING BRANDS</p>
         <div class="brand-logos">
           <div class="brand-logo">bento</div>
@@ -106,7 +106,7 @@ include 'includes/site-header.php';
           <div class="brand-logo">Limobuz</div>
           <div class="brand-logo">Piwurz</div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!-- ABOUT SECTION - MODERN TWO COLUMN -->
@@ -657,33 +657,32 @@ include 'includes/site-header.php';
           </div>
         </div>
 
-        <form id="contactForm" class="contact-form-modern" data-aos="fade-left">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" required placeholder="Your full name">
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" required placeholder="your@email.com">
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" placeholder="What is this about?">
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" rows="5" required placeholder="Tell us about your project..."></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary-modern btn-block">
-            Send Message <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
+          <form id="contactForm" class="contact-form-modern" onsubmit="return false;">
+              <input type="hidden" name="access_key" value="c143c009-815d-4a18-b787-9db4e69b864a">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="name">Name *</label>
+                      <input type="text" id="name" name="name" required placeholder="Your full name">
+                  </div>
+                  
+                  <div class="form-group">
+                      <label for="email">Email *</label>
+                      <input type="email" id="email" name="email" required placeholder="your@email.com">
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" required placeholder="Tell us about your project..."></textarea>
+              </div>
+              
+              <button type="button" id="submitContactBtn" class="btn btn-primary-modern">
+                  <span>Send Message</span>
+                  <i class="fas fa-paper-plane"></i>
+              </button>
+          </form>
       </div>
     </section>
 
