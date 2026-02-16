@@ -270,14 +270,17 @@ include 'includes/site-header.php';
       <?php endif; ?>
     </section>
 
-    <!-- CTA Section -->
-    <section class="portfolio-cta" data-aos="fade-up">
+    <!-- CTA SECTION - MEET THE MINDS -->
+    <section class="cta-modern" data-aos="fade-up">
       <div class="cta-content">
-        <h2>Have a Project in Mind?</h2>
-        <p>Let's collaborate to create something amazing together</p>
-        <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-lg">
-          Start Your Project <i class="fas fa-arrow-right"></i>
-        </a>
+        <div class="cta-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h2>Meet the Minds Behind the Magic</h2>
+        <p>We don't just create designs—we craft experiences that turn heads, spark emotions, and drive results. Ready to start your next project?</p>
+        <button class="btn btn-primary-modern btn-lg" onclick="window.location.href='contact.php'">
+          Get Started Today <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </section>
 

@@ -653,24 +653,17 @@ include 'includes/site-header.php';
       </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-service-page" data-aos="fade-up">
+    <!-- CTA SECTION - MEET THE MINDS -->
+    <section class="cta-modern" data-aos="fade-up">
       <div class="cta-content">
-        <div class="cta-avatar-circle">
-          <img src="<?php echo asset('about-2.png'); ?>" alt="Content Strategist">
+        <div class="cta-icon">
+          <i class="fas fa-lightbulb"></i>
         </div>
-        <h2>Ready to Elevate Your Content Game?</h2>
-        <p>Let's create content that your audience loves and your competitors envy.</p>
-        <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-lg">
-          Start Creating Content <i class="fas fa-arrow-right"></i>
-        </a>
-        
-        <div class="cta-footer-info">
-          <p>Questions About Packages?</p>
-          <a href="mailto:<?php echo e($contactEmail); ?>" class="cta-email-link">
-            <?php echo e($contactEmail); ?>
-          </a>
-        </div>
+        <h2>Meet the Minds Behind the Magic</h2>
+        <p>We don't just create designs—we craft experiences that turn heads, spark emotions, and drive results. Ready to start your next project?</p>
+        <button class="btn btn-primary-modern btn-lg" onclick="window.location.href='contact.php'">
+          Get Started Today <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </section>
 

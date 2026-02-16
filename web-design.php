@@ -327,24 +327,17 @@ include 'includes/site-header.php';
       </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-service-page" data-aos="fade-up">
+    <!-- CTA SECTION - MEET THE MINDS -->
+    <section class="cta-modern" data-aos="fade-up">
       <div class="cta-content">
-        <div class="cta-avatar-circle">
-          <img src="<?php echo asset('hero.png'); ?>" alt="Lead Designer">
+        <div class="cta-icon">
+          <i class="fas fa-lightbulb"></i>
         </div>
         <h2>Meet the Minds Behind the Magic</h2>
-        <p>Got a big idea and ready to execute with our lead designer?</p>
-        <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-lg">
-          Book a Free Call <i class="fas fa-arrow-right"></i>
-        </a>
-        
-        <div class="cta-footer-info">
-          <p>Prefer Email?</p>
-          <a href="mailto:<?php echo e($contactEmail); ?>" class="cta-email-link">
-            <?php echo e($contactEmail); ?>
-          </a>
-        </div>
+        <p>We don't just create designs—we craft experiences that turn heads, spark emotions, and drive results. Ready to start your next project?</p>
+        <button class="btn btn-primary-modern btn-lg" onclick="window.location.href='contact.php'">
+          Get Started Today <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
     </section>
 

@@ -1,7 +1,7 @@
-<script src="<?php echo baseUrl('js/index.js'); ?>"></script>
+<script src="<?php echo asset_version('js/index.js'); ?>"></script>
 
 <?php
-$siteName = getSetting('site_name', 'MR. DONGPHETS');
+$siteName = getSetting('site_name', 'MUSTARD DIGITALS');
 ?>
     <footer>
       © <span id="year"></span> <?php echo e($siteName); ?> • Crafted with care

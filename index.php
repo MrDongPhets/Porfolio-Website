@@ -120,9 +120,9 @@ include 'includes/site-header.php';
             <?php echo nl2br(e($about['content'] ?? 'When you work with an elite agency, you don\'t just get a design. You walk away with a strategic partner who obsesses over every pixel, every color, and every user interaction. Whether it\'s a knockout logo, an immersive brand identity, or a Figma prototype that developers love—we deliver perfection.')); ?>
           </p>
           <button class="btn btn-primary-modern"
-  onclick="window.location.href='about.php'">
-  Explore More <i class="fas fa-arrow-right"></i>
-</button>
+            onclick="window.location.href='about.php'">
+            Explore More <i class="fas fa-arrow-right"></i>
+          </button>
         </div>
         
         <div class="about-image" data-aos="fade-left">
@@ -605,7 +605,7 @@ include 'includes/site-header.php';
         </div>
         <h2>Meet the Minds Behind the Magic</h2>
         <p>We don't just create designs—we craft experiences that turn heads, spark emotions, and drive results. Ready to start your next project?</p>
-        <button class="btn btn-primary-modern btn-lg" id="cta-bottom">
+        <button class="btn btn-primary-modern btn-lg" onclick="window.location.href='contact.php'">
           Get Started Today <i class="fas fa-arrow-right"></i>
         </button>
       </div>

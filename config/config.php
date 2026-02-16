@@ -142,3 +142,39 @@ function asset($path) {
 function adminUrl($path = '') {
     return baseUrl('admin/' . ltrim($path, '/'));
 }
+
+/**
+ * Asset versioning helper
+ * Automatically adds version parameter based on file modification time
+ * This forces browser cache refresh when files are updated
+ * 
+ * @param string $path - Relative path to asset (e.g., 'css/style.css')
+ * @return string - Full URL with version parameter
+ */
+function asset_version($path) {
+    $fullPath = $_SERVER['DOCUMENT_ROOT'] . '/' . trim($path, '/');
+    
+    // Check if file exists
+    if (file_exists($fullPath)) {
+        // Use file modification time as version
+        $version = filemtime($fullPath);
+        return baseUrl($path) . '?v=' . $version;
+    }
+    
+    // Fallback: use current timestamp if file doesn't exist
+    return baseUrl($path) . '?v=' . time();
+}
+
+/**
+ * Alternative: Manual version control
+ * Define a global version number you manually increment
+ */
+function asset_v($path, $useFileTime = true) {
+    if ($useFileTime) {
+        return asset_version($path);
+    }
+    
+    // Manual version - update this when you deploy
+    define('ASSET_VERSION', '1.0.5'); // Increment this on each deployment
+    return baseUrl($path) . '?v=' . ASSET_VERSION;
+}

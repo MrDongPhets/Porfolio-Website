@@ -76,19 +76,20 @@ include 'includes/site-header.php';
                 </div>
             </div>
 
-            <!-- CTA Section -->
-            <div class="cta-section" style="margin-top: 80px;">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Let's collaborate to bring your vision to life. Get in touch today to discuss your project requirements.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo baseUrl(); ?>#contact" class="btn-white">
-                        <i class="fas fa-envelope"></i> Get in Touch
-                    </a>
-                    <a href="<?php echo baseUrl('portfolio.php'); ?>" class="btn-outline-white">
-                        <i class="fas fa-briefcase"></i> View Our Work
-                    </a>
-                </div>
-            </div>
+    <!-- CTA SECTION - MEET THE MINDS -->
+    <section class="cta-modern" data-aos="fade-up">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h2>Meet the Minds Behind the Magic</h2>
+        <p>We don't just create designs—we craft experiences that turn heads, spark emotions, and drive results. Ready to start your next project?</p>
+        <button class="btn btn-primary-modern btn-lg" onclick="window.location.href='contact.php'">
+          Get Started Today <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
 
         <?php else: ?>
             <div class="empty-services">

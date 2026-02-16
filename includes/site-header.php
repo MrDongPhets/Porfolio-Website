@@ -44,6 +44,7 @@ $services = [
 ?>
 <!doctype html>
 <html lang="en">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -59,14 +60,14 @@ $services = [
   <!-- AOS Animation Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="<?php echo baseUrl('css/style.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/style-modern.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/about.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/service-detail.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/portfolio.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/services.css'); ?>">
-  <link rel="stylesheet" href="<?php echo baseUrl('css/contact.css'); ?>">
+  <!-- Stylesheets with Auto-Versioning -->
+  <link rel="stylesheet" href="<?php echo asset_version('css/style.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/style-modern.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/about.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/service-detail.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/portfolio.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/services.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/contact.css'); ?>">
   
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
