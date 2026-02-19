@@ -290,16 +290,16 @@ include 'includes/site-header.php';
                     <?php if (!empty($item['description'])): ?>
                       <p><?php echo e(truncate($item['description'], 80)); ?></p>
                     <?php endif; ?>
-                    <?php if (!empty($item['project_url'])): ?>
-                      <a href="<?php echo e($item['project_url']); ?>" target="_blank" class="btn btn-white-sm">
-                        View Project <i class="fas fa-arrow-right"></i>
-                      </a>
-                    <?php endif; ?>
+                    <a href="portfolio-detail.php?id=<?php echo urlencode($item['id']); ?>" class="btn btn-white-sm">
+                      View Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="portfolio-info-modern">
-                <h4><?php echo e($item['title']); ?></h4>
+                <a href="portfolio-detail.php?id=<?php echo urlencode($item['id']); ?>" style="text-decoration:none;color:inherit;">
+                  <h4><?php echo e($item['title']); ?></h4>
+                </a>
                 <p class="portfolio-meta">
                   <span class="category"><?php echo e($item['category']); ?></span>
                   <span class="separator">•</span>

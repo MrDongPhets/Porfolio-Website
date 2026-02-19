@@ -85,12 +85,12 @@ $('#cta').on('click', function(){
 });
 
 // animation on scroll
-$(window).on('scroll resize', function(){
-    $('.review-card').each(function(i,el){
-    const r = $(el).offset().top - $(window).scrollTop();
-    if(r < $(window).height()*0.85) $(el).css('transform','translateY(0)');
-    });
-});
+// $(window).on('scroll resize', function(){
+//     $('.review-card').each(function(i,el){
+//     const r = $(el).offset().top - $(window).scrollTop();
+//     if(r < $(window).height()*0.85) $(el).css('transform','translateY(0)');
+//     });
+// });
 
 
 $('#submitContactBtn').on('click', async function(){

@@ -93,56 +93,115 @@ include 'includes/site-header.php';
       </div>
     </section>
 
-    <!-- RECOGNITIONS & AWARDS -->
-    <section class="awards-section">
+    <!-- MISSION & VISION SECTION -->
+    <!-- <section class="mission-vision-section">
+      <div class="mission-vision-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Mission & Vision</h2>
+          <p class="section-subtitle">The purpose and direction that guide everything we do</p>
+        </div>
+
+        <div class="mv-grid">
+          <div class="mv-card mv-mission" data-aos="fade-right" data-aos-delay="100">
+            <div class="mv-card-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="mv-card-label">Mission</div>
+            <h3>What We're Here to Do</h3>
+            <p>To provide creative, reliable, and results-driven digital solutions while nurturing a team culture that develops integrity, servant leadership, professional excellence, and Christ-centered character.</p>
+          </div>
+
+          <div class="mv-card mv-vision" data-aos="fade-left" data-aos-delay="200">
+            <div class="mv-card-icon">
+              <i class="fas fa-binoculars"></i>
+            </div>
+            <div class="mv-card-label">Vision</div>
+            <h3>Where We're Headed</h3>
+            <p>To become a trusted global digital partner known not only for quality work and innovation, but also for raising leaders who positively impact businesses, communities, and lives through faith-informed service and excellence.</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- MUSTARD CORE VALUES -->
+    <!-- <section class="awards-section">
       <div class="awards-section-container">
         <div class="section-header" data-aos="fade-up">
-          <h2 class="section-title-modern">Recognitions & Awards</h2>
-          <p class="section-subtitle">Industry recognition for our outstanding work</p>
+          <h2 class="section-title-modern">MUSTARD Core Values</h2>
+          <p class="section-subtitle">The principles behind every decision, every project, every person</p>
         </div>
-  
+
         <div class="awards-container">
-          <div class="award-featured-image" data-aos="fade-right">
-            <img src="<?php echo asset('service.jpg'); ?>" alt="Awards trophy">
-            <div class="award-shine"></div>
+          <div class="mustard-container">
+            <span>M</span>
+            <span>U</span>
+            <span>S</span>
+            <span>T</span>
+            <span>A</span>
+            <span>R</span>
+            <span>D</span>
           </div>
-  
+
           <div class="awards-list" data-aos="fade-left">
             <div class="award-item" data-aos="fade-up" data-aos-delay="100">
               <div class="award-info">
-                <h3>Awwwards FWA</h3>
-                <p>Site of the Day - Oculous Immersive Workflow Build</p>
+                <h3>Mission Driven Service</h3>
+                <p>We serve with purpose, excellence, and intentionality, seeing our work as both professional service and meaningful impact.</p>
               </div>
-              <div class="award-year">2024</div>
+              <div class="mustard-letter">M</div>
             </div>
-  
+
+            <div class="award-item" data-aos="fade-up" data-aos-delay="150">
+              <div class="award-info">
+                <h3>Unity in Team and Purpose</h3>
+                <p>We cultivate collaboration, encouragement, and shared vision, building strong relationships within the team and with clients.</p>
+              </div>
+              <div class="mustard-letter">U</div>
+            </div>
+
             <div class="award-item" data-aos="fade-up" data-aos-delay="200">
               <div class="award-info">
-                <h3>CSS Design Awards</h3>
-                <p>UI Design Excellence</p>
+                <h3>Stewardship and Integrity</h3>
+                <p>We handle time, talent, resources, and client trust responsibly, honoring God through honesty, accountability, and excellence.</p>
               </div>
-              <div class="award-year">2024</div>
+              <div class="mustard-letter">S</div>
             </div>
-  
+
+            <div class="award-item" data-aos="fade-up" data-aos-delay="250">
+              <div class="award-info">
+                <h3>Transformational Growth</h3>
+                <p>We commit to continuous growth professionally, personally, and spiritually, developing leaders who positively influence others.</p>
+              </div>
+              <div class="mustard-letter">T</div>
+            </div>
+
             <div class="award-item" data-aos="fade-up" data-aos-delay="300">
               <div class="award-info">
-                <h3>Clutch Top 100</h3>
-                <p>Ranked among the best design agencies globally</p>
+                <h3>Authenticity and Humility</h3>
+                <p>We work with sincerity, teachability, and humility, valuing character as much as competence.</p>
               </div>
-              <div class="award-year">2023</div>
+              <div class="mustard-letter">A</div>
             </div>
-  
+
+            <div class="award-item" data-aos="fade-up" data-aos-delay="350">
+              <div class="award-info">
+                <h3>Reliability and Excellence</h3>
+                <p>We deliver consistent quality, dependable service, and professional results that clients can trust.</p>
+              </div>
+              <div class="mustard-letter">R</div>
+            </div>
+
             <div class="award-item" data-aos="fade-up" data-aos-delay="400">
               <div class="award-info">
-                <h3>Adobe Design Achievement Awards</h3>
-                <p>Finalist - Branding Category</p>
+                <h3>Discipleship Through Work</h3>
+                <p>We see every project as an opportunity to model servant leadership, mentor others, and reflect values worth passing on.</p>
               </div>
-              <div class="award-year">2023</div>
+              <div class="mustard-letter">D</div>
             </div>
           </div>
         </div>
-      </div>    
-    </section>
+      </div>
+    </section> -->
 
     <!-- OUR STORY SECTION -->
     <section class="our-story-section">

@@ -70,6 +70,7 @@ $services = [
   <link rel="stylesheet" href="<?php echo asset_version('css/about.css'); ?>">
   <link rel="stylesheet" href="<?php echo asset_version('css/service-detail.css'); ?>">
   <link rel="stylesheet" href="<?php echo asset_version('css/portfolio.css'); ?>">
+  <link rel="stylesheet" href="<?php echo asset_version('css/portfolio-detail.css'); ?>">
   <link rel="stylesheet" href="<?php echo asset_version('css/services.css'); ?>">
   <link rel="stylesheet" href="<?php echo asset_version('css/contact.css'); ?>">
   

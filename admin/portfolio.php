@@ -10,7 +10,34 @@ $adminDb = getAdminDb();
 
 // Handle actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-    
+
+    // AJAX: Upload a single gallery image and return its URL as JSON
+    if ($_POST['action'] === 'upload_gallery_image') {
+        ob_start(); // buffer any accidental PHP error output
+        $response = ['success' => false, 'error' => 'Unknown error'];
+        if (isset($_FILES['gallery_image']) && $_FILES['gallery_image']['error'] === UPLOAD_ERR_OK) {
+            $upload = uploadFileToSupabase($_FILES['gallery_image'], 'MUSTARD', 'portfolio/gallery');
+            $response = $upload;
+        } elseif (isset($_FILES['gallery_image'])) {
+            $phpErrors = [
+                UPLOAD_ERR_INI_SIZE   => 'File exceeds server upload limit',
+                UPLOAD_ERR_FORM_SIZE  => 'File exceeds form upload limit',
+                UPLOAD_ERR_PARTIAL    => 'File was only partially uploaded',
+                UPLOAD_ERR_NO_FILE    => 'No file was sent',
+                UPLOAD_ERR_NO_TMP_DIR => 'Missing temp folder',
+                UPLOAD_ERR_CANT_WRITE => 'Failed to write file to disk',
+            ];
+            $code = $_FILES['gallery_image']['error'];
+            $response = ['success' => false, 'error' => $phpErrors[$code] ?? 'Upload error code ' . $code];
+        } else {
+            $response = ['success' => false, 'error' => 'No file received'];
+        }
+        ob_end_clean(); // discard any PHP notices/warnings
+        header('Content-Type: application/json');
+        echo json_encode($response);
+        exit;
+    }
+
     // Add/Edit Portfolio Item
     if ($_POST['action'] === 'save_item') {
         $id = $_POST['id'] ?? null;
@@ -20,7 +47,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         $project_url = clean($_POST['project_url'] ?? '');
         $is_featured = isset($_POST['is_featured']) ? true : false;
         $current_image = $_POST['current_image'] ?? '';
-        
+
+        // Case study fields
+        $slug = clean($_POST['slug'] ?? '');
+        if (empty($slug)) $slug = generateSlug($title);
+        $client_name  = clean($_POST['client_name'] ?? '');
+        $role         = clean($_POST['role'] ?? '');
+        $timeline     = clean($_POST['timeline'] ?? '');
+        $tools_used   = clean($_POST['tools_used'] ?? '');
+        $deliverables = clean($_POST['deliverables'] ?? '');
+        $challenge    = clean($_POST['challenge'] ?? '');
+        $solution     = clean($_POST['solution'] ?? '');
+        $results      = clean($_POST['results'] ?? '');
+        // gallery_images: all uploads already handled via AJAX, just read the final URL list
+        $allGalleryUrls = json_decode($_POST['existing_gallery_json'] ?? '[]', true) ?: [];
+        $gallery_images = !empty($allGalleryUrls) ? json_encode(array_values($allGalleryUrls)) : '';
+
         if (empty($title) || empty($category)) {
             setFlash('error', 'Title and category are required');
         } else {
@@ -44,13 +86,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             }
             
             $data = [
-                'title' => $title,
-                'description' => $description,
-                'category' => $category,
-                'image_url' => $image_url,
-                'project_url' => $project_url,
-                'is_featured' => $is_featured,
-                'updated_at' => date('Y-m-d H:i:s')
+                'title'          => $title,
+                'description'    => $description,
+                'category'       => $category,
+                'image_url'      => $image_url,
+                'project_url'    => $project_url,
+                'is_featured'    => $is_featured,
+                'slug'           => $slug,
+                'client_name'    => $client_name,
+                'role'           => $role,
+                'timeline'       => $timeline,
+                'tools_used'     => $tools_used,
+                'deliverables'   => $deliverables,
+                'challenge'      => $challenge,
+                'solution'       => $solution,
+                'results'        => $results,
+                'gallery_images' => $gallery_images,
+                'updated_at'     => date('Y-m-d H:i:s')
             ];
             
             if ($id) {
@@ -291,15 +343,184 @@ if ($filterCategory !== 'all') {
 
             <div class="form-group">
                 <label for="project_url">Project URL (optional)</label>
-                <input 
-                    type="url" 
-                    id="project_url" 
-                    name="project_url" 
+                <input
+                    type="url"
+                    id="project_url"
+                    name="project_url"
                     class="form-control"
                     value="<?php echo e($editItem['project_url'] ?? ''); ?>"
                     placeholder="https://example.com"
                 >
             </div>
+
+            <!-- ── Case Study Fields ─────────────────────────── -->
+            <hr style="margin:24px 0;border-color:var(--gray-200);">
+            <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-500);margin:0 0 20px;">Case Study Details</p>
+
+            <div class="form-row">
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="client_name">Client Name</label>
+                    <input
+                        type="text"
+                        id="client_name"
+                        name="client_name"
+                        class="form-control"
+                        value="<?php echo e($editItem['client_name'] ?? ''); ?>"
+                        placeholder="e.g., Acme Corporation"
+                    >
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="role">Your Role</label>
+                    <input
+                        type="text"
+                        id="role"
+                        name="role"
+                        class="form-control"
+                        value="<?php echo e($editItem['role'] ?? ''); ?>"
+                        placeholder="e.g., Lead Brand Designer"
+                    >
+                </div>
+            </div>
+
+            <div class="form-row" style="margin-top:20px;">
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="timeline">Timeline</label>
+                    <input
+                        type="text"
+                        id="timeline"
+                        name="timeline"
+                        class="form-control"
+                        value="<?php echo e($editItem['timeline'] ?? ''); ?>"
+                        placeholder="e.g., 4 weeks"
+                    >
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <label for="slug">URL Slug</label>
+                    <input
+                        type="text"
+                        id="slug"
+                        name="slug"
+                        class="form-control"
+                        value="<?php echo e($editItem['slug'] ?? ''); ?>"
+                        placeholder="auto-generated from title"
+                    >
+                    <small class="form-text">Auto-filled from title. Leave blank to auto-generate.</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tools_used">Tools Used</label>
+                <input
+                    type="text"
+                    id="tools_used"
+                    name="tools_used"
+                    class="form-control"
+                    value="<?php echo e($editItem['tools_used'] ?? ''); ?>"
+                    placeholder="e.g., Figma, Adobe Illustrator, Canva"
+                >
+                <small class="form-text">Comma-separated list of tools and software used.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="deliverables">Deliverables</label>
+                <input
+                    type="text"
+                    id="deliverables"
+                    name="deliverables"
+                    class="form-control"
+                    value="<?php echo e($editItem['deliverables'] ?? ''); ?>"
+                    placeholder="e.g., Logo Suite, Brand Guidelines, Business Cards"
+                >
+                <small class="form-text">Comma-separated list of project deliverables.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="challenge">The Challenge</label>
+                <textarea
+                    id="challenge"
+                    name="challenge"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Describe the problem or challenge the client faced..."
+                ><?php echo e($editItem['challenge'] ?? ''); ?></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="solution">The Solution / Our Approach</label>
+                <textarea
+                    id="solution"
+                    name="solution"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Describe your approach, process, and decisions..."
+                ><?php echo e($editItem['solution'] ?? ''); ?></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="results">Results & Impact</label>
+                <textarea
+                    id="results"
+                    name="results"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Describe the measurable outcomes and impact..."
+                ><?php echo e($editItem['results'] ?? ''); ?></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Gallery Images</label>
+
+                <?php
+                // Decode existing gallery for display
+                $existingGallery = $editItem['gallery_images'] ?? '';
+                $existingGalleryArr = [];
+                if (!empty($existingGallery)) {
+                    $decoded = json_decode($existingGallery, true);
+                    $existingGalleryArr = is_array($decoded) ? $decoded : [];
+                }
+                ?>
+
+                <!-- Hidden field holding retained URLs as JSON (updated by JS when user removes an image) -->
+                <input
+                    type="hidden"
+                    id="existing_gallery_json"
+                    name="existing_gallery_json"
+                    value="<?php echo e(json_encode($existingGalleryArr)); ?>"
+                >
+
+                <!-- Existing thumbnails -->
+                <?php if (!empty($existingGalleryArr)): ?>
+                <div class="gallery-preview" id="galleryPreview">
+                    <?php foreach ($existingGalleryArr as $idx => $gUrl): ?>
+                    <div class="gallery-thumb" id="gthumb-<?php echo $idx; ?>">
+                        <img src="<?php echo e(getImageUrl($gUrl)); ?>" alt="Gallery image">
+                        <button
+                            type="button"
+                            class="gallery-remove-btn"
+                            onclick="removeGalleryImage(<?php echo $idx; ?>, '<?php echo e($gUrl); ?>')"
+                            title="Remove"
+                        >&times;</button>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+                <?php else: ?>
+                <div class="gallery-preview" id="galleryPreview"></div>
+                <?php endif; ?>
+
+                <!-- Upload new images via AJAX -->
+                <label class="gallery-upload-btn" id="galleryUploadLabel">
+                    <i class="fas fa-plus"></i> Add Images
+                    <input
+                        type="file"
+                        id="gallery_images_upload"
+                        accept="image/*"
+                        multiple
+                        style="display:none;"
+                    >
+                </label>
+                <small class="form-text">Select one or more images — they upload instantly. Recommended: 1200x800px.</small>
+            </div>
+            <!-- ── End Case Study Fields ─────────────────────── -->
 
             <div class="form-group">
                 <label for="portfolio_image">Project Image *</label>
@@ -637,6 +858,98 @@ textarea.form-control {
     border: 2px solid var(--gray-200);
 }
 
+/* Gallery upload thumbnails */
+.gallery-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery-thumb {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--gray-200);
+    flex-shrink: 0;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-remove-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.gallery-remove-btn:hover {
+    background: var(--danger, #e53e3e);
+}
+
+.gallery-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 9px 18px;
+    border: 2px dashed var(--gray-300, #d1d5db);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-600, #4b5563);
+    background: var(--gray-50, #f9fafb);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gallery-upload-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(24,77,55,0.04);
+}
+
+.gallery-thumb-uploading {
+    background: var(--gray-100, #f3f4f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-thumb-uploading::after {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--gray-300, #d1d5db);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: gallerySpinner 0.7s linear infinite;
+}
+
+@keyframes gallerySpinner {
+    to { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -651,12 +964,111 @@ function closeModal() {
 }
 
 // Close modal when clicking outside
-window.onclick = function(event) {
+window.addEventListener('click', function(event) {
+    if (!event || !event.target) return;
     const modal = document.getElementById('addModal');
-    if (event.target == modal) {
+    if (modal && event.target === modal) {
         closeModal();
     }
+});
+
+// Auto-generate slug from title on blur
+(function () {
+    const titleInput = document.getElementById('title');
+    const slugInput  = document.getElementById('slug');
+
+    if (!titleInput || !slugInput) return;
+
+    titleInput.addEventListener('blur', function () {
+        if (slugInput.value.trim() !== '') return; // don't overwrite existing slug
+        const raw = titleInput.value.trim().toLowerCase();
+        const slug = raw
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        slugInput.value = slug;
+    });
+}());
+
+// Remove an existing gallery image thumbnail
+function removeGalleryImage(idx, url) {
+    const thumb = document.getElementById('gthumb-' + idx);
+    if (thumb) thumb.remove();
+    const field = document.getElementById('existing_gallery_json');
+    let urls = JSON.parse(field.value || '[]');
+    urls = urls.filter(function (u) { return u !== url; });
+    field.value = JSON.stringify(urls);
 }
+
+// AJAX gallery uploader — uploads each selected file immediately, no page reload needed
+document.addEventListener('DOMContentLoaded', function () {
+    const galleryInput = document.getElementById('gallery_images_upload');
+    const preview      = document.getElementById('galleryPreview');
+    const jsonField    = document.getElementById('existing_gallery_json');
+    if (!galleryInput || !preview || !jsonField) return;
+
+    galleryInput.addEventListener('change', function () {
+        Array.from(galleryInput.files).forEach(function (file) {
+            if (!file.type.startsWith('image/')) return;
+
+            // Add a spinner placeholder thumbnail
+            const thumb = document.createElement('div');
+            thumb.className = 'gallery-thumb gallery-thumb-uploading';
+            preview.appendChild(thumb);
+
+            // Build form data for AJAX upload
+            const fd = new FormData();
+            fd.append('action', 'upload_gallery_image');
+            fd.append('gallery_image', file);
+
+            fetch('portfolio.php', { method: 'POST', body: fd })
+                .then(function (r) {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.json();
+                })
+                .then(function (data) {
+                    if (data.success && data.url) {
+                        // Replace spinner with real thumbnail + remove button
+                        thumb.classList.remove('gallery-thumb-uploading');
+
+                        const img = document.createElement('img');
+                        img.src = data.url;
+                        thumb.appendChild(img);
+
+                        const url = data.url;
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'gallery-remove-btn';
+                        btn.title = 'Remove';
+                        btn.innerHTML = '&times;';
+                        btn.addEventListener('click', function () {
+                            thumb.remove();
+                            let urls = JSON.parse(jsonField.value || '[]');
+                            urls = urls.filter(function (u) { return u !== url; });
+                            jsonField.value = JSON.stringify(urls);
+                        });
+                        thumb.appendChild(btn);
+
+                        // Add URL to hidden JSON field
+                        let urls = JSON.parse(jsonField.value || '[]');
+                        urls.push(url);
+                        jsonField.value = JSON.stringify(urls);
+                    } else {
+                        thumb.remove();
+                        alert('Upload failed: ' + (data.error || 'Unknown error'));
+                    }
+                })
+                .catch(function (err) {
+                    thumb.remove();
+                    alert('Upload failed: ' + (err.message || 'Please try again.'));
+                });
+        });
+
+        // Reset input so the same file can be re-selected if needed
+        galleryInput.value = '';
+    });
+});
 </script>
 
 <?php include 'includes/footer.php'; ?>

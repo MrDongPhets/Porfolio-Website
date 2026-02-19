@@ -11,116 +11,24 @@ $filterCategory = $_GET['category'] ?? 'all';
 // Fetch site settings
 $siteName = getSetting('site_name', 'MR. DONGPHETS');
 
-// Temporary portfolio data (will be replaced with backend later)
-$portfolioItems = [
-    [
-        'title' => 'Tech Startup Branding',
-        'category' => 'Branding',
-        'description' => 'Complete brand identity for an AI-powered SaaS platform',
-        'image_url' => 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ],
-    [
-        'title' => 'E-Commerce Website',
-        'category' => 'Web Design',
-        'description' => 'Modern online store with seamless checkout experience',
-        'image_url' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ],
-    [
-        'title' => 'Social Media Campaign',
-        'category' => 'Content Creation',
-        'description' => 'Viral Instagram campaign generating 2M+ impressions',
-        'image_url' => 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'Product Launch Video',
-        'category' => 'Video Editing',
-        'description' => 'High-impact promotional video for tech product launch',
-        'image_url' => 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ],
-    [
-        'title' => 'Corporate Presentation',
-        'category' => 'Content Creation',
-        'description' => 'Professional pitch deck for Fortune 500 company',
-        'image_url' => 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'Mobile App UI Design',
-        'category' => 'Web Design',
-        'description' => 'Intuitive interface design for fitness tracking app',
-        'image_url' => 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ],
-    [
-        'title' => 'Restaurant Rebrand',
-        'category' => 'Branding',
-        'description' => 'Fresh visual identity for farm-to-table restaurant',
-        'image_url' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'YouTube Channel Growth',
-        'category' => 'Video Editing',
-        'description' => 'Series of viral videos increasing subscribers by 300%',
-        'image_url' => 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'Fashion Brand Website',
-        'category' => 'Web Design',
-        'description' => 'Elegant e-commerce site with immersive photography',
-        'image_url' => 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ],
-    [
-        'title' => 'Annual Report Design',
-        'category' => 'Content Creation',
-        'description' => 'Data visualization and infographic-rich annual report',
-        'image_url' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'Real Estate Marketing',
-        'category' => 'Content Creation',
-        'description' => 'Luxury property marketing materials and virtual tours',
-        'image_url' => 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800',
-        'project_url' => '#',
-        'is_featured' => false
-    ],
-    [
-        'title' => 'Documentary Editing',
-        'category' => 'Video Editing',
-        'description' => 'Award-winning short documentary on climate change',
-        'image_url' => 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800',
-        'project_url' => '#',
-        'is_featured' => true
-    ]
-];
-
-// Filter by category if not 'all'
-if ($filterCategory !== 'all') {
-    $portfolioItems = array_filter($portfolioItems, function($item) use ($filterCategory) {
-        return strtolower($item['category']) === strtolower($filterCategory);
-    });
+// Fetch all active portfolio items from database
+$allPortfolioItems = [];
+$result = $db->select('portfolio_items', '*', ['is_active' => true], 'display_order.asc,created_at.desc');
+if ($result['success'] && !empty($result['data'])) {
+    $allPortfolioItems = $result['data'];
 }
 
-// Get unique categories
-$categories = array_unique(array_column($portfolioItems, 'category'));
+// Get unique categories from ALL items (before filtering)
+$categories = array_unique(array_column($allPortfolioItems, 'category'));
 sort($categories);
+
+// Filter by category
+$portfolioItems = $allPortfolioItems;
+if ($filterCategory !== 'all') {
+    $portfolioItems = array_values(array_filter($allPortfolioItems, function($item) use ($filterCategory) {
+        return strtolower($item['category']) === strtolower($filterCategory);
+    }));
+}
 
 // Include header
 include 'includes/site-header.php';
@@ -178,8 +86,8 @@ include 'includes/site-header.php';
                       <span class="carousel-category"><?php echo e($item['category']); ?></span>
                       <h3><?php echo e($item['title']); ?></h3>
                       <p><?php echo e($item['description']); ?></p>
-                      <a href="<?php echo e($item['project_url']); ?>" class="carousel-link">
-                        View Project <i class="fas fa-arrow-right"></i>
+                      <a href="portfolio-detail.php?id=<?php echo urlencode($item['id']); ?>" class="carousel-link">
+                        View Case Study <i class="fas fa-arrow-right"></i>
                       </a>
                     </div>
                   </div>
@@ -238,8 +146,8 @@ include 'includes/site-header.php';
                     <span class="portfolio-badge"><?php echo e($item['category']); ?></span>
                     <h3><?php echo e($item['title']); ?></h3>
                     <p><?php echo e($item['description']); ?></p>
-                    <a href="<?php echo e($item['project_url']); ?>" target="_blank" class="portfolio-btn">
-                      <span>View Project</span>
+                    <a href="portfolio-detail.php?id=<?php echo urlencode($item['id']); ?>" class="portfolio-btn">
+                      <span>View Case Study</span>
                       <i class="fas fa-arrow-right"></i>
                     </a>
                   </div>
@@ -250,11 +158,11 @@ include 'includes/site-header.php';
         </div>
 
         <!-- Load More Button -->
-        <div class="load-more-container" data-aos="fade-up">
+        <!-- <div class="load-more-container" data-aos="fade-up">
           <button class="btn btn-outline-modern" id="loadMoreBtn">
             Load More Projects <i class="fas fa-chevron-down"></i>
           </button>
-        </div>
+        </div> -->
       <?php else: ?>
         <div class="empty-state" data-aos="fade-up">
           <i class="fas fa-folder-open"></i>
