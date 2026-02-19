@@ -544,7 +544,7 @@ include 'includes/site-header.php';
     </section>
 
     <!-- BLOG SECTION - THE STUDIO JOURNAL -->
-    <section class="blog-modern">
+    <!-- <section class="blog-modern">
       <div class="section-header" data-aos="fade-up">
         <h2 class="section-title-modern">The Studio Journal</h2>
         <p class="section-subtitle">Latest insights and updates from our team</p>
@@ -599,7 +599,7 @@ include 'includes/site-header.php';
           </div>
         </article>
       </div>
-    </section>
+    </section> -->
 
     <!-- CTA SECTION - MEET THE MINDS -->
     <section class="cta-modern" data-aos="fade-up">

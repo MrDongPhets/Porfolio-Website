@@ -44,7 +44,7 @@ include 'includes/site-header.php';
       <!-- Floating stats -->
       <div class="portfolio-stats" data-aos="fade-up" data-aos-delay="200">
         <div class="stat-item">
-          <span class="stat-number">150+</span>
+          <span class="stat-number"><?php echo count($allPortfolioItems); ?></span>
           <span class="stat-label">Projects Completed</span>
         </div>
         <div class="stat-item">
@@ -52,7 +52,7 @@ include 'includes/site-header.php';
           <span class="stat-label">Client Satisfaction</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">50+</span>
+          <span class="stat-number"><?php echo count($allPortfolioItems); ?></span>
           <span class="stat-label">Happy Clients</span>
         </div>
       </div>
