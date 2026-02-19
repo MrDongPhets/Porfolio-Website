@@ -4,7 +4,7 @@ if (!function_exists('getSetting')) {
     require_once __DIR__ . '/../config/config.php';
 }
 
-$siteName = getSetting('site_name', 'MR. DONGPHETS');
+$siteName = getSetting('site_name', 'MUSTARD DIGITALS');
 $pageTitle = $pageTitle ?? $siteName;
 
 // Define services for dropdown
@@ -44,10 +44,10 @@ $services = [
 ?>
 <!doctype html>
 <html lang="en">
-<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta property="og:site_name" content="Mustard Digital">
   <title><?php echo e($pageTitle); ?> — <?php echo e($siteName); ?></title>
   <link rel="icon" type="image/x-icon" href="<?php echo baseUrl('assets/favicon/favicon.ico'); ?>">
   <meta name="description" content="<?php echo e(getSetting('site_description', 'Creative design studio specializing in logos, branding, and web design')); ?>">
