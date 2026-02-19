@@ -205,10 +205,15 @@
 
 /* Awards Section */
 .awards-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 120px min(2rem, 8%);
-  background: var(--accent-2);
+max-width: unset;
+    margin: unset;
+    padding: 100px min(2rem, 8%);
+    background: var(--card);
+}
+
+.awards-section-container{
+max-width: 1400px;
+    margin: 0 auto;
 }
 
 .awards-container {

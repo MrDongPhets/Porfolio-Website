@@ -68,54 +68,56 @@ include 'includes/site-header.php';
 
     <!-- SUPPORT PROCESS -->
     <section id="process" class="process-detailed-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">How We Work With You</h2>
-      </div>
-
-      <div class="process-detailed-grid">
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-handshake"></i>
-            </div>
-          </div>
-          <h3>1. Onboarding & Setup</h3>
-          <p>We learn your business, processes, tools, and communication preferences.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Comprehensive needs assessment</li>
-            <li><i class="fas fa-check"></i> Tool & system access setup</li>
-            <li><i class="fas fa-check"></i> Workflow documentation</li>
-          </ul>
+      <div class="process-detailed-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">How We Work With You</h2>
         </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-tasks"></i>
+  
+        <div class="process-detailed-grid">
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-handshake"></i>
+              </div>
             </div>
+            <h3>1. Onboarding & Setup</h3>
+            <p>We learn your business, processes, tools, and communication preferences.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Comprehensive needs assessment</li>
+              <li><i class="fas fa-check"></i> Tool & system access setup</li>
+              <li><i class="fas fa-check"></i> Workflow documentation</li>
+            </ul>
           </div>
-          <h3>2. Daily Operations</h3>
-          <p>We execute tasks seamlessly, keeping you informed with regular updates.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Task execution & management</li>
-            <li><i class="fas fa-check"></i> Proactive problem-solving</li>
-            <li><i class="fas fa-check"></i> Clear communication protocols</li>
-          </ul>
-        </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-chart-line"></i>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-tasks"></i>
+              </div>
             </div>
+            <h3>2. Daily Operations</h3>
+            <p>We execute tasks seamlessly, keeping you informed with regular updates.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Task execution & management</li>
+              <li><i class="fas fa-check"></i> Proactive problem-solving</li>
+              <li><i class="fas fa-check"></i> Clear communication protocols</li>
+            </ul>
           </div>
-          <h3>3. Optimize & Scale</h3>
-          <p>We continuously improve processes and adapt as your business grows.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Process improvement suggestions</li>
-            <li><i class="fas fa-check"></i> Weekly/monthly reporting</li>
-            <li><i class="fas fa-check"></i> Scalable support levels</li>
-          </ul>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <h3>3. Optimize & Scale</h3>
+            <p>We continuously improve processes and adapt as your business grows.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Process improvement suggestions</li>
+              <li><i class="fas fa-check"></i> Weekly/monthly reporting</li>
+              <li><i class="fas fa-check"></i> Scalable support levels</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -222,86 +224,88 @@ include 'includes/site-header.php';
 
     <!-- SUPPORT PACKAGES -->
     <section class="content-packages-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Support Packages</h2>
-        <p class="section-subtitle">Flexible support levels to match your needs</p>
-      </div>
-
-      <div class="packages-grid">
-        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="package-header">
-            <h3>Essential</h3>
-            <div class="package-price">
-              <span class="price">$800</span>
-              <span class="period">/month</span>
-            </div>
-            <p class="package-hours">20 hours/month</p>
-          </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> Email & calendar management</li>
-            <li><i class="fas fa-check"></i> Basic data entry</li>
-            <li><i class="fas fa-check"></i> Meeting scheduling</li>
-            <li><i class="fas fa-check"></i> Document formatting</li>
-            <li><i class="fas fa-check"></i> Response within 24 hours</li>
-            <li><i class="fas fa-check"></i> Weekly status updates</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
-            Get Started
-          </a>
+      <div class="content-packages-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Support Packages</h2>
+          <p class="section-subtitle">Flexible support levels to match your needs</p>
         </div>
-
-        <div class="package-card featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="popular-badge">Most Popular</div>
-          <div class="package-header">
-            <h3>Professional</h3>
-            <div class="package-price">
-              <span class="price">$1,500</span>
-              <span class="period">/month</span>
+  
+        <div class="packages-grid">
+          <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="package-header">
+              <h3>Essential</h3>
+              <div class="package-price">
+                <span class="price">$800</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="package-hours">20 hours/month</p>
             </div>
-            <p class="package-hours">40 hours/month</p>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> Email & calendar management</li>
+              <li><i class="fas fa-check"></i> Basic data entry</li>
+              <li><i class="fas fa-check"></i> Meeting scheduling</li>
+              <li><i class="fas fa-check"></i> Document formatting</li>
+              <li><i class="fas fa-check"></i> Response within 24 hours</li>
+              <li><i class="fas fa-check"></i> Weekly status updates</li>
+            </ul>
+            <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
+              Get Started
+            </a>
           </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> All Essential features</li>
-            <li><i class="fas fa-check"></i> CRM management</li>
-            <li><i class="fas fa-check"></i> Client communication</li>
-            <li><i class="fas fa-check"></i> Travel coordination</li>
-            <li><i class="fas fa-check"></i> Research & reporting</li>
-            <li><i class="fas fa-check"></i> Process documentation</li>
-            <li><i class="fas fa-check"></i> Response within 4 hours</li>
-            <li><i class="fas fa-check"></i> Daily status updates</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-block">
-            Get Started
-          </a>
-        </div>
-
-        <div class="package-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="package-header">
-            <h3>Executive</h3>
-            <div class="package-price">
-              <span class="price">$2,800</span>
-              <span class="period">/month</span>
+  
+          <div class="package-card featured" data-aos="fade-up" data-aos-delay="200">
+            <div class="popular-badge">Most Popular</div>
+            <div class="package-header">
+              <h3>Professional</h3>
+              <div class="package-price">
+                <span class="price">$1,500</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="package-hours">40 hours/month</p>
             </div>
-            <p class="package-hours">80 hours/month</p>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> All Essential features</li>
+              <li><i class="fas fa-check"></i> CRM management</li>
+              <li><i class="fas fa-check"></i> Client communication</li>
+              <li><i class="fas fa-check"></i> Travel coordination</li>
+              <li><i class="fas fa-check"></i> Research & reporting</li>
+              <li><i class="fas fa-check"></i> Process documentation</li>
+              <li><i class="fas fa-check"></i> Response within 4 hours</li>
+              <li><i class="fas fa-check"></i> Daily status updates</li>
+            </ul>
+            <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-block">
+              Get Started
+            </a>
           </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> All Professional features</li>
-            <li><i class="fas fa-check"></i> Dedicated assistant</li>
-            <li><i class="fas fa-check"></i> Project management</li>
-            <li><i class="fas fa-check"></i> Team coordination</li>
-            <li><i class="fas fa-check"></i> Event planning & execution</li>
-            <li><i class="fas fa-check"></i> Workflow optimization</li>
-            <li><i class="fas fa-check"></i> Priority response (1 hour)</li>
-            <li><i class="fas fa-check"></i> Weekly strategy calls</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
-            Get Started
-          </a>
+  
+          <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="package-header">
+              <h3>Executive</h3>
+              <div class="package-price">
+                <span class="price">$2,800</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="package-hours">80 hours/month</p>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> All Professional features</li>
+              <li><i class="fas fa-check"></i> Dedicated assistant</li>
+              <li><i class="fas fa-check"></i> Project management</li>
+              <li><i class="fas fa-check"></i> Team coordination</li>
+              <li><i class="fas fa-check"></i> Event planning & execution</li>
+              <li><i class="fas fa-check"></i> Workflow optimization</li>
+              <li><i class="fas fa-check"></i> Priority response (1 hour)</li>
+              <li><i class="fas fa-check"></i> Weekly strategy calls</li>
+            </ul>
+            <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
+              Get Started
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="packages-note" data-aos="fade-up">
-        <p><i class="fas fa-info-circle"></i> All packages include rollover of unused hours (up to 25%), no setup fees, and flexible month-to-month contracts. Custom hourly rates available.</p>
+  
+        <div class="packages-note" data-aos="fade-up">
+          <p><i class="fas fa-info-circle"></i> All packages include rollover of unused hours (up to 25%), no setup fees, and flexible month-to-month contracts. Custom hourly rates available.</p>
+        </div>
       </div>
     </section>
 
@@ -371,69 +375,71 @@ include 'includes/site-header.php';
 
     <!-- TOOLS WE USE -->
     <section class="tech-stack-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Tools & Platforms We Master</h2>
-        <p class="section-subtitle">Expert proficiency in the systems you already use</p>
-      </div>
-
-      <div class="tech-stack-grid">
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-          <h3><i class="fas fa-envelope"></i> Email & Calendar</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Gmail</span>
-            <span class="tech-badge">Outlook</span>
-            <span class="tech-badge">Apple Mail</span>
-            <span class="tech-badge">Calendly</span>
-          </div>
+      <div class="tech-stack-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Tools & Platforms We Master</h2>
+          <p class="section-subtitle">Expert proficiency in the systems you already use</p>
         </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-          <h3><i class="fas fa-tasks"></i> Project Management</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Asana</span>
-            <span class="tech-badge">Monday.com</span>
-            <span class="tech-badge">Trello</span>
-            <span class="tech-badge">ClickUp</span>
+  
+        <div class="tech-stack-grid">
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-envelope"></i> Email & Calendar</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Gmail</span>
+              <span class="tech-badge">Outlook</span>
+              <span class="tech-badge">Apple Mail</span>
+              <span class="tech-badge">Calendly</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
-          <h3><i class="fas fa-database"></i> CRM Systems</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Salesforce</span>
-            <span class="tech-badge">HubSpot</span>
-            <span class="tech-badge">Pipedrive</span>
-            <span class="tech-badge">Zoho CRM</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-tasks"></i> Project Management</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Asana</span>
+              <span class="tech-badge">Monday.com</span>
+              <span class="tech-badge">Trello</span>
+              <span class="tech-badge">ClickUp</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
-          <h3><i class="fas fa-file-alt"></i> Documentation</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Google Workspace</span>
-            <span class="tech-badge">Microsoft Office</span>
-            <span class="tech-badge">Notion</span>
-            <span class="tech-badge">Airtable</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-database"></i> CRM Systems</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Salesforce</span>
+              <span class="tech-badge">HubSpot</span>
+              <span class="tech-badge">Pipedrive</span>
+              <span class="tech-badge">Zoho CRM</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="500">
-          <h3><i class="fas fa-comments"></i> Communication</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Slack</span>
-            <span class="tech-badge">Microsoft Teams</span>
-            <span class="tech-badge">Zoom</span>
-            <span class="tech-badge">WhatsApp Business</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
+            <h3><i class="fas fa-file-alt"></i> Documentation</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Google Workspace</span>
+              <span class="tech-badge">Microsoft Office</span>
+              <span class="tech-badge">Notion</span>
+              <span class="tech-badge">Airtable</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="600">
-          <h3><i class="fas fa-robot"></i> Automation</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Zapier</span>
-            <span class="tech-badge">Make</span>
-            <span class="tech-badge">IFTTT</span>
-            <span class="tech-badge">Automate.io</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="500">
+            <h3><i class="fas fa-comments"></i> Communication</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Slack</span>
+              <span class="tech-badge">Microsoft Teams</span>
+              <span class="tech-badge">Zoom</span>
+              <span class="tech-badge">WhatsApp Business</span>
+            </div>
+          </div>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="600">
+            <h3><i class="fas fa-robot"></i> Automation</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Zapier</span>
+              <span class="tech-badge">Make</span>
+              <span class="tech-badge">IFTTT</span>
+              <span class="tech-badge">Automate.io</span>
+            </div>
           </div>
         </div>
       </div>
@@ -572,83 +578,85 @@ include 'includes/site-header.php';
 
     <!-- TESTIMONIALS -->
     <section class="testimonials-modern">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Client Success Stories</h2>
-        <p class="section-subtitle">How administrative support transformed their businesses</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-            </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"I got 15 hours back per week—no exaggeration. My assistant handles everything from scheduling to client follow-ups. I can finally focus on growing the business instead of drowning in admin work."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">RJ</div>
-            </div>
-            <div class="author-info">
-              <h4>Rachel Johnson</h4>
-              <p>Founder | Marketing Agency</p>
-            </div>
-          </div>
+      <div class="testimonials-modern-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Client Success Stories</h2>
+          <p class="section-subtitle">How administrative support transformed their businesses</p>
         </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+        <div class="testimonials-grid">
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
+            
+            <p class="testimonial-text">"I got 15 hours back per week—no exaggeration. My assistant handles everything from scheduling to client follow-ups. I can finally focus on growing the business instead of drowning in admin work."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">RJ</div>
+              </div>
+              <div class="author-info">
+                <h4>Rachel Johnson</h4>
+                <p>Founder | Marketing Agency</p>
+              </div>
+            </div>
           </div>
-          
-          <p class="testimonial-text">"Best business decision I made this year. My VA manages my entire CRM, follows up with leads, and keeps everything organized. Our client retention improved by 40% because nothing falls through the cracks anymore."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">DT</div>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <div class="author-info">
-              <h4>David Thompson</h4>
-              <p>Real Estate Broker</p>
+            
+            <p class="testimonial-text">"Best business decision I made this year. My VA manages my entire CRM, follows up with leads, and keeps everything organized. Our client retention improved by 40% because nothing falls through the cracks anymore."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">DT</div>
+              </div>
+              <div class="author-info">
+                <h4>David Thompson</h4>
+                <p>Real Estate Broker</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"Having executive support without the $80K salary is a game-changer. My assistant coordinates my team, manages projects, and handles travel—all the things that used to eat up my entire day. Worth every penny."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">SC</div>
-            </div>
-            <div class="author-info">
-              <h4>Sarah Chen</h4>
-              <p>CEO | Tech Startup</p>
+            
+            <p class="testimonial-text">"Having executive support without the $80K salary is a game-changer. My assistant coordinates my team, manages projects, and handles travel—all the things that used to eat up my entire day. Worth every penny."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">SC</div>
+              </div>
+              <div class="author-info">
+                <h4>Sarah Chen</h4>
+                <p>CEO | Tech Startup</p>
+              </div>
             </div>
           </div>
         </div>

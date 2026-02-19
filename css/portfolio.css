@@ -62,7 +62,7 @@
   display: block;
   font-size: 48px;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--text);
   line-height: 1;
   margin-bottom: 8px;
 }

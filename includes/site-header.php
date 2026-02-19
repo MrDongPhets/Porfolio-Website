@@ -49,6 +49,7 @@ $services = [
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title><?php echo e($pageTitle); ?> — <?php echo e($siteName); ?></title>
+  <link rel="icon" type="image/x-icon" href="<?php echo baseUrl('assets/favicon/favicon.ico'); ?>">
   <meta name="description" content="<?php echo e(getSetting('site_description', 'Creative design studio specializing in logos, branding, and web design')); ?>">
   
   <!-- Fonts -->
@@ -80,53 +81,57 @@ $services = [
 <body data-theme="light">
   <div class="container">
     <header>
-      <div class="brand">
-        <a href="<?php echo baseUrl(); ?>" style="color: inherit; text-decoration: none;">
-         <div class="logo-img">
-          <img src="../assets/mustard.png" alt="">
-         </div>
-        </a>
-      </div>
-      <nav id="mainNav">
-        <a href="<?php echo baseUrl(); ?>" class="nav-link">Home</a>
-        <a href="<?php echo baseUrl('about.php'); ?>" class="nav-link">About</a>
-        
-        <!-- Services Dropdown -->
-        <div class="nav-dropdown">
-          <a href="#" class="nav-link dropdown-toggle">
-            Services <i class="fas fa-chevron-down"></i>
+      <div class="nav" id="nav">
+        <div class="brand">
+          <a href="<?php echo baseUrl(); ?>" style="color: inherit; text-decoration: none;">
+           <div class="logo-img">
+            <img src="../assets/mustard.png" alt="">
+           </div>
           </a>
-          <div class="dropdown-menu">
-            <div class="dropdown-grid">
-              <?php foreach ($services as $service): ?>
-                <a href="<?php echo $service['url']; ?>" class="dropdown-item">
-                  <div class="dropdown-icon">
-                    <i class="fas <?php echo $service['icon']; ?>"></i>
-                  </div>
-                  <div class="dropdown-content">
-                    <h4><?php echo e($service['name']); ?></h4>
-                    <p><?php echo e($service['description']); ?></p>
-                  </div>
-                </a>
-              <?php endforeach; ?>
-            </div>
-            <!-- <div class="dropdown-footer">
-              <a href="<?php // echo baseUrl('services.php'); ?>" class="btn-view-all">
-                View All Services <i class="fas fa-arrow-right"></i>
-              </a>
-            </div> -->
-          </div>
         </div>
-        
-        <a href="<?php echo baseUrl('portfolio.php'); ?>" class="nav-link">Portfolio</a>
-        <a href="<?php echo baseUrl('contact.php'); ?>" class="nav-link">Contact</a>
-      </nav>
-      <div class="controls">
-        <div class="theme-toggle" id="themeToggle"><i class="fa-solid fa-sun"></i></div>
-        <div class="toggle hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <nav id="mainNav">
+          <a href="<?php echo baseUrl(); ?>" class="nav-link">Home</a>
+          <a href="<?php echo baseUrl('about.php'); ?>" class="nav-link">About</a>
+          
+          <!-- Services Dropdown -->
+          <div class="nav-dropdown">
+            <a href="#" class="nav-link dropdown-toggle">
+              Services <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-grid">
+                <?php foreach ($services as $service): ?>
+                  <a href="<?php echo $service['url']; ?>" class="dropdown-item">
+                    <div class="dropdown-icon">
+                      <i class="fas <?php echo $service['icon']; ?>"></i>
+                    </div>
+                    <div class="dropdown-content">
+                      <h4><?php echo e($service['name']); ?></h4>
+                      <p><?php echo e($service['description']); ?></p>
+                    </div>
+                  </a>
+                <?php endforeach; ?>
+              </div>
+              <!-- <div class="dropdown-footer">
+                <a href="<?php // echo baseUrl('services.php'); ?>" class="btn-view-all">
+                  View All Services <i class="fas fa-arrow-right"></i>
+                </a>
+              </div> -->
+            </div>
+          </div>
+          
+          <a href="<?php echo baseUrl('portfolio.php'); ?>" class="nav-link">Portfolio</a>
+          <a href="<?php echo baseUrl('contact.php'); ?>" class="nav-link">Contact</a>
+        </nav>
+        <div class="controls">
+          <div class="theme-toggle" id="themeToggle"><i class="fa-solid fa-sun"></i></div>
+          <div class="toggle hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </header>
+
+

@@ -67,54 +67,56 @@ include 'includes/site-header.php';
 
     <!-- CONTENT CREATION PROCESS -->
     <section id="process" class="process-detailed-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Our Content Creation Process</h2>
-      </div>
-
-      <div class="process-detailed-grid">
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-bullseye"></i>
-            </div>
-          </div>
-          <h3>1. Strategy & Planning</h3>
-          <p>We start by understanding your audience, brand voice, and content goals.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Content audit & analysis</li>
-            <li><i class="fas fa-check"></i> Audience research & personas</li>
-            <li><i class="fas fa-check"></i> Content calendar development</li>
-          </ul>
+      <div class="process-detailed-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Our Content Creation Process</h2>
         </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-pencil-alt"></i>
+  
+        <div class="process-detailed-grid">
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-bullseye"></i>
+              </div>
             </div>
+            <h3>1. Strategy & Planning</h3>
+            <p>We start by understanding your audience, brand voice, and content goals.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Content audit & analysis</li>
+              <li><i class="fas fa-check"></i> Audience research & personas</li>
+              <li><i class="fas fa-check"></i> Content calendar development</li>
+            </ul>
           </div>
-          <h3>2. Creation & Design</h3>
-          <p>Our creative team brings concepts to life with stunning visuals and compelling copy.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Visual design & graphics</li>
-            <li><i class="fas fa-check"></i> Copywriting & messaging</li>
-            <li><i class="fas fa-check"></i> Multi-format adaptation</li>
-          </ul>
-        </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-chart-line"></i>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-pencil-alt"></i>
+              </div>
             </div>
+            <h3>2. Creation & Design</h3>
+            <p>Our creative team brings concepts to life with stunning visuals and compelling copy.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Visual design & graphics</li>
+              <li><i class="fas fa-check"></i> Copywriting & messaging</li>
+              <li><i class="fas fa-check"></i> Multi-format adaptation</li>
+            </ul>
           </div>
-          <h3>3. Optimize & Scale</h3>
-          <p>We analyze performance data and continuously refine content for maximum impact.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> A/B testing & optimization</li>
-            <li><i class="fas fa-check"></i> Performance analytics</li>
-            <li><i class="fas fa-check"></i> Iterative improvements</li>
-          </ul>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <h3>3. Optimize & Scale</h3>
+            <p>We analyze performance data and continuously refine content for maximum impact.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> A/B testing & optimization</li>
+              <li><i class="fas fa-check"></i> Performance analytics</li>
+              <li><i class="fas fa-check"></i> Iterative improvements</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -221,82 +223,84 @@ include 'includes/site-header.php';
 
     <!-- CONTENT PACKAGES -->
     <section class="content-packages-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Content Packages</h2>
-        <p class="section-subtitle">Choose the plan that fits your needs</p>
-      </div>
-
-      <div class="packages-grid">
-        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="package-header">
-            <h3>Starter</h3>
-            <div class="package-price">
-              <span class="price">$500</span>
-              <span class="period">/month</span>
-            </div>
-          </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> 12 social media posts</li>
-            <li><i class="fas fa-check"></i> 4 Instagram Stories</li>
-            <li><i class="fas fa-check"></i> Basic content calendar</li>
-            <li><i class="fas fa-check"></i> 2 revisions per asset</li>
-            <li><i class="fas fa-check"></i> Stock photos included</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
-            Get Started
-          </a>
+      <div class="content-packages-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Content Packages</h2>
+          <p class="section-subtitle">Choose the plan that fits your needs</p>
         </div>
-
-        <div class="package-card featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="popular-badge">Most Popular</div>
-          <div class="package-header">
-            <h3>Professional</h3>
-            <div class="package-price">
-              <span class="price">$1,200</span>
-              <span class="period">/month</span>
+  
+        <div class="packages-grid">
+          <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="package-header">
+              <h3>Starter</h3>
+              <div class="package-price">
+                <span class="price">$500</span>
+                <span class="period">/month</span>
+              </div>
             </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> 12 social media posts</li>
+              <li><i class="fas fa-check"></i> 4 Instagram Stories</li>
+              <li><i class="fas fa-check"></i> Basic content calendar</li>
+              <li><i class="fas fa-check"></i> 2 revisions per asset</li>
+              <li><i class="fas fa-check"></i> Stock photos included</li>
+            </ul>
+            <a href="contact.php" class="btn btn-outline-modern btn-block">
+              Get Started
+            </a>
           </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> 24 social media posts</li>
-            <li><i class="fas fa-check"></i> 8 Instagram Stories</li>
-            <li><i class="fas fa-check"></i> 4 carousel posts</li>
-            <li><i class="fas fa-check"></i> 2 blog graphics</li>
-            <li><i class="fas fa-check"></i> Content strategy session</li>
-            <li><i class="fas fa-check"></i> Caption writing included</li>
-            <li><i class="fas fa-check"></i> Unlimited revisions</li>
-            <li><i class="fas fa-check"></i> Priority support</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-primary-modern btn-block">
-            Get Started
-          </a>
-        </div>
-
-        <div class="package-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="package-header">
-            <h3>Enterprise</h3>
-            <div class="package-price">
-              <span class="price">$2,500</span>
-              <span class="period">/month</span>
+  
+          <div class="package-card featured" data-aos="fade-up" data-aos-delay="200">
+            <div class="popular-badge">Most Popular</div>
+            <div class="package-header">
+              <h3>Professional</h3>
+              <div class="package-price">
+                <span class="price">$1,200</span>
+                <span class="period">/month</span>
+              </div>
             </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> 24 social media posts</li>
+              <li><i class="fas fa-check"></i> 8 Instagram Stories</li>
+              <li><i class="fas fa-check"></i> 4 carousel posts</li>
+              <li><i class="fas fa-check"></i> 2 blog graphics</li>
+              <li><i class="fas fa-check"></i> Content strategy session</li>
+              <li><i class="fas fa-check"></i> Caption writing included</li>
+              <li><i class="fas fa-check"></i> Unlimited revisions</li>
+              <li><i class="fas fa-check"></i> Priority support</li>
+            </ul>
+            <a href="contact.php" class="btn btn-primary-modern btn-block">
+              Get Started
+            </a>
           </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check"></i> 50+ social media posts</li>
-            <li><i class="fas fa-check"></i> Unlimited Stories</li>
-            <li><i class="fas fa-check"></i> 8 carousel posts</li>
-            <li><i class="fas fa-check"></i> 4 blog posts + graphics</li>
-            <li><i class="fas fa-check"></i> Video thumbnails</li>
-            <li><i class="fas fa-check"></i> Email templates</li>
-            <li><i class="fas fa-check"></i> Dedicated account manager</li>
-            <li><i class="fas fa-check"></i> Monthly strategy calls</li>
-          </ul>
-          <a href="<?php echo baseUrl(); ?>#contact" class="btn btn-outline-modern btn-block">
-            Get Started
-          </a>
+  
+          <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="package-header">
+              <h3>Enterprise</h3>
+              <div class="package-price">
+                <span class="price">$2,500</span>
+                <span class="period">/month</span>
+              </div>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check"></i> 50+ social media posts</li>
+              <li><i class="fas fa-check"></i> Unlimited Stories</li>
+              <li><i class="fas fa-check"></i> 8 carousel posts</li>
+              <li><i class="fas fa-check"></i> 4 blog posts + graphics</li>
+              <li><i class="fas fa-check"></i> Video thumbnails</li>
+              <li><i class="fas fa-check"></i> Email templates</li>
+              <li><i class="fas fa-check"></i> Dedicated account manager</li>
+              <li><i class="fas fa-check"></i> Monthly strategy calls</li>
+            </ul>
+            <a href="contact.php" class="btn btn-outline-modern btn-block">
+              Get Started
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="packages-note" data-aos="fade-up">
-        <p><i class="fas fa-info-circle"></i> All packages include brand guideline adherence, source files, and monthly performance reports. Custom packages available.</p>
+  
+        <div class="packages-note" data-aos="fade-up">
+          <p><i class="fas fa-info-circle"></i> All packages include brand guideline adherence, source files, and monthly performance reports. Custom packages available.</p>
+        </div>
       </div>
     </section>
 
@@ -369,49 +373,51 @@ include 'includes/site-header.php';
 
     <!-- CONTENT TOOLS -->
     <section class="tech-stack-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Tools & Platforms We Use</h2>
-        <p class="section-subtitle">Professional software for high-quality content creation</p>
-      </div>
-
-      <div class="tech-stack-grid">
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-          <h3><i class="fas fa-paint-brush"></i> Design Tools</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Adobe Photoshop</span>
-            <span class="tech-badge">Illustrator</span>
-            <span class="tech-badge">Canva Pro</span>
-            <span class="tech-badge">Figma</span>
-          </div>
+      <div class="tech-stack-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Tools & Platforms We Use</h2>
+          <p class="section-subtitle">Professional software for high-quality content creation</p>
         </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-          <h3><i class="fas fa-calendar"></i> Planning</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Later</span>
-            <span class="tech-badge">Buffer</span>
-            <span class="tech-badge">Notion</span>
-            <span class="tech-badge">Asana</span>
+  
+        <div class="tech-stack-grid">
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-paint-brush"></i> Design Tools</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Adobe Photoshop</span>
+              <span class="tech-badge">Illustrator</span>
+              <span class="tech-badge">Canva Pro</span>
+              <span class="tech-badge">Figma</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
-          <h3><i class="fas fa-chart-bar"></i> Analytics</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Google Analytics</span>
-            <span class="tech-badge">Hootsuite</span>
-            <span class="tech-badge">Sprout Social</span>
-            <span class="tech-badge">Meta Business Suite</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-calendar"></i> Planning</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Later</span>
+              <span class="tech-badge">Buffer</span>
+              <span class="tech-badge">Notion</span>
+              <span class="tech-badge">Asana</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
-          <h3><i class="fas fa-images"></i> Resources</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Unsplash</span>
-            <span class="tech-badge">Pexels</span>
-            <span class="tech-badge">Adobe Stock</span>
-            <span class="tech-badge">Envato Elements</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-chart-bar"></i> Analytics</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Google Analytics</span>
+              <span class="tech-badge">Hootsuite</span>
+              <span class="tech-badge">Sprout Social</span>
+              <span class="tech-badge">Meta Business Suite</span>
+            </div>
+          </div>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
+            <h3><i class="fas fa-images"></i> Resources</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Unsplash</span>
+              <span class="tech-badge">Pexels</span>
+              <span class="tech-badge">Adobe Stock</span>
+              <span class="tech-badge">Envato Elements</span>
+            </div>
           </div>
         </div>
       </div>
@@ -570,83 +576,85 @@ include 'includes/site-header.php';
 
     <!-- TESTIMONIALS -->
     <section class="testimonials-modern">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">What Clients Say</h2>
-        <p class="section-subtitle">Brands we've helped grow</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-            </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"Our Instagram engagement tripled in just 3 months! They understand what content resonates with our audience and consistently deliver scroll-stopping visuals."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">JL</div>
-            </div>
-            <div class="author-info">
-              <h4>Jessica Lee</h4>
-              <p>Marketing Manager | Fashion Brand</p>
-            </div>
-          </div>
+      <div class="testimonials-modern-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">What Clients Say</h2>
+          <p class="section-subtitle">Brands we've helped grow</p>
         </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+        <div class="testimonials-grid">
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
+            
+            <p class="testimonial-text">"Our Instagram engagement tripled in just 3 months! They understand what content resonates with our audience and consistently deliver scroll-stopping visuals."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">JL</div>
+              </div>
+              <div class="author-info">
+                <h4>Jessica Lee</h4>
+                <p>Marketing Manager | Fashion Brand</p>
+              </div>
+            </div>
           </div>
-          
-          <p class="testimonial-text">"Finally, a team that gets B2B content! Our LinkedIn posts now actually get engagement. The infographics and thought leadership content have positioned us as industry experts."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">MK</div>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <div class="author-info">
-              <h4>Michael Kim</h4>
-              <p>CEO | SaaS Company</p>
+            
+            <p class="testimonial-text">"Finally, a team that gets B2B content! Our LinkedIn posts now actually get engagement. The infographics and thought leadership content have positioned us as industry experts."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">MK</div>
+              </div>
+              <div class="author-info">
+                <h4>Michael Kim</h4>
+                <p>CEO | SaaS Company</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"They take care of everything—from strategy to posting. I can focus on running my business while they handle our entire content presence. Worth every penny!"</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">AP</div>
-            </div>
-            <div class="author-info">
-              <h4>Alicia Patel</h4>
-              <p>Founder | Wellness Studio</p>
+            
+            <p class="testimonial-text">"They take care of everything—from strategy to posting. I can focus on running my business while they handle our entire content presence. Worth every penny!"</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">AP</div>
+              </div>
+              <div class="author-info">
+                <h4>Alicia Patel</h4>
+                <p>Founder | Wellness Studio</p>
+              </div>
             </div>
           </div>
         </div>

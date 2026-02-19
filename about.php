@@ -95,51 +95,53 @@ include 'includes/site-header.php';
 
     <!-- RECOGNITIONS & AWARDS -->
     <section class="awards-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Recognitions & Awards</h2>
-        <p class="section-subtitle">Industry recognition for our outstanding work</p>
-      </div>
-
-      <div class="awards-container">
-        <div class="award-featured-image" data-aos="fade-right">
-          <img src="<?php echo asset('service.jpg'); ?>" alt="Awards trophy">
-          <div class="award-shine"></div>
+      <div class="awards-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Recognitions & Awards</h2>
+          <p class="section-subtitle">Industry recognition for our outstanding work</p>
         </div>
-
-        <div class="awards-list" data-aos="fade-left">
-          <div class="award-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="award-info">
-              <h3>Awwwards FWA</h3>
-              <p>Site of the Day - Oculous Immersive Workflow Build</p>
-            </div>
-            <div class="award-year">2024</div>
+  
+        <div class="awards-container">
+          <div class="award-featured-image" data-aos="fade-right">
+            <img src="<?php echo asset('service.jpg'); ?>" alt="Awards trophy">
+            <div class="award-shine"></div>
           </div>
-
-          <div class="award-item" data-aos="fade-up" data-aos-delay="200">
-            <div class="award-info">
-              <h3>CSS Design Awards</h3>
-              <p>UI Design Excellence</p>
+  
+          <div class="awards-list" data-aos="fade-left">
+            <div class="award-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="award-info">
+                <h3>Awwwards FWA</h3>
+                <p>Site of the Day - Oculous Immersive Workflow Build</p>
+              </div>
+              <div class="award-year">2024</div>
             </div>
-            <div class="award-year">2024</div>
-          </div>
-
-          <div class="award-item" data-aos="fade-up" data-aos-delay="300">
-            <div class="award-info">
-              <h3>Clutch Top 100</h3>
-              <p>Ranked among the best design agencies globally</p>
+  
+            <div class="award-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="award-info">
+                <h3>CSS Design Awards</h3>
+                <p>UI Design Excellence</p>
+              </div>
+              <div class="award-year">2024</div>
             </div>
-            <div class="award-year">2023</div>
-          </div>
-
-          <div class="award-item" data-aos="fade-up" data-aos-delay="400">
-            <div class="award-info">
-              <h3>Adobe Design Achievement Awards</h3>
-              <p>Finalist - Branding Category</p>
+  
+            <div class="award-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="award-info">
+                <h3>Clutch Top 100</h3>
+                <p>Ranked among the best design agencies globally</p>
+              </div>
+              <div class="award-year">2023</div>
             </div>
-            <div class="award-year">2023</div>
+  
+            <div class="award-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="award-info">
+                <h3>Adobe Design Achievement Awards</h3>
+                <p>Finalist - Branding Category</p>
+              </div>
+              <div class="award-year">2023</div>
+            </div>
           </div>
         </div>
-      </div>
+      </div>    
     </section>
 
     <!-- OUR STORY SECTION -->

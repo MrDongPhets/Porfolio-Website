@@ -163,10 +163,15 @@
 
 /* Process Detailed Section */
 .process-detailed-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 120px min(2rem, 8%);
-  background: var(--accent-2);
+    max-width: unset;
+    margin: unset;
+    padding: 100px min(2rem, 8%);
+    background: var(--card);
+}
+
+.process-detailed-section-container{
+max-width: 1400px;
+    margin: 0 auto;
 }
 
 .process-detailed-grid {
@@ -309,10 +314,15 @@
 
 /* Tech Stack Section */
 .tech-stack-section {
+      max-width: unset;
+    margin: unset;
+    padding: 100px min(2rem, 8%);
+    background: var(--card);
+}
+
+.tech-stack-section-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 120px min(2rem, 8%);
-  background: var(--accent-2);
 }
 
 .tech-stack-grid {
@@ -1024,7 +1034,6 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 120px min(2rem, 8%);
-  background: var(--accent-2);
 }
 
 .video-portfolio-grid {
@@ -1275,10 +1284,15 @@
 
 /* Content Packages Section */
 .content-packages-section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 120px min(2rem, 8%);
-  background: var(--accent-2);
+    max-width: unset;
+    margin: unset;
+    padding: 100px min(2rem, 8%);
+    background: var(--card);
+}
+
+.content-packages-section-container{
+max-width: 1400px;
+    margin: 0 auto;
 }
 
 .packages-grid {
@@ -1308,7 +1322,6 @@
 .package-card.featured {
   border-color: var(--primary);
   border-width: 3px;
-  background: white;
 }
 
 .popular-badge {

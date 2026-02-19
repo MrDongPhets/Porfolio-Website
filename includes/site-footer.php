@@ -24,6 +24,36 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
       offset: 100
     });
 
+
+        $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('#nav').addClass('scrolled');
+        } else {
+            $('#nav').removeClass('scrolled');
+        }
+    });
+
+    // Add nav scroll styles
+    if (!$('#nav-scroll-styles').length) {
+        $('<style id="nav-scroll-styles">')
+            .html(`
+                #nav.scrolled {
+                    width: 80%;
+                    margin-top: 1rem;
+                     border-radius: 10px;
+                    background-color: var(--header-bg);
+                    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+                        transition: all 0.3s ease-in-out
+                }
+                body.light-mode #nav.scrolled {
+                    background: rgba(255, 255, 255, 0.95);
+                    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+                }
+            `)
+            .appendTo('head');
+    }
+
 // Hamburger menu toggle
 (function(){
   const hamburger = $('#hamburger');

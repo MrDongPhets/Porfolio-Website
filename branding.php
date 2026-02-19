@@ -67,54 +67,56 @@ include 'includes/site-header.php';
 
     <!-- BRANDING PROCESS -->
     <section id="process" class="process-detailed-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Our Brand Design Process</h2>
-      </div>
-
-      <div class="process-detailed-grid">
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-compass"></i>
-            </div>
-          </div>
-          <h3>1. Discovery & Strategy</h3>
-          <p>We dive deep into your brand's mission, values, target audience, and competitive landscape.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Brand workshops & interviews</li>
-            <li><i class="fas fa-check"></i> Market research & analysis</li>
-            <li><i class="fas fa-check"></i> Brand positioning strategy</li>
-          </ul>
+      <div class="process-detailed-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Our Brand Design Process</h2>
         </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-palette"></i>
+  
+        <div class="process-detailed-grid">
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-compass"></i>
+              </div>
             </div>
+            <h3>1. Discovery & Strategy</h3>
+            <p>We dive deep into your brand's mission, values, target audience, and competitive landscape.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Brand workshops & interviews</li>
+              <li><i class="fas fa-check"></i> Market research & analysis</li>
+              <li><i class="fas fa-check"></i> Brand positioning strategy</li>
+            </ul>
           </div>
-          <h3>2. Concept Development</h3>
-          <p>We explore multiple creative directions and present concepts that align with your vision.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Logo explorations (3-5 concepts)</li>
-            <li><i class="fas fa-check"></i> Color palette development</li>
-            <li><i class="fas fa-check"></i> Typography selection</li>
-          </ul>
-        </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-star"></i>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-palette"></i>
+              </div>
             </div>
+            <h3>2. Concept Development</h3>
+            <p>We explore multiple creative directions and present concepts that align with your vision.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Logo explorations (3-5 concepts)</li>
+              <li><i class="fas fa-check"></i> Color palette development</li>
+              <li><i class="fas fa-check"></i> Typography selection</li>
+            </ul>
           </div>
-          <h3>3. Refinement & Delivery</h3>
-          <p>We polish your chosen direction and deliver a complete brand identity system.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Final logo refinements</li>
-            <li><i class="fas fa-check"></i> Brand style guide creation</li>
-            <li><i class="fas fa-check"></i> Asset package delivery</li>
-          </ul>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <h3>3. Refinement & Delivery</h3>
+            <p>We polish your chosen direction and deliver a complete brand identity system.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Final logo refinements</li>
+              <li><i class="fas fa-check"></i> Brand style guide creation</li>
+              <li><i class="fas fa-check"></i> Asset package delivery</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -230,58 +232,60 @@ include 'includes/site-header.php';
 
     <!-- DESIGN SPECIALTIES -->
     <section class="tech-stack-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Design Specialties</h2>
-        <p class="section-subtitle">Areas where we excel in creating exceptional brand experiences</p>
-      </div>
-
-      <div class="specialties-grid">
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="specialty-icon">
-            <i class="fas fa-building"></i>
-          </div>
-          <h3>Corporate Branding</h3>
-          <p>Professional identities for B2B companies, startups, and enterprises that command authority and trust.</p>
+      <div class="tech-stack-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Design Specialties</h2>
+          <p class="section-subtitle">Areas where we excel in creating exceptional brand experiences</p>
         </div>
-
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="specialty-icon">
-            <i class="fas fa-store"></i>
+  
+        <div class="specialties-grid">
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="specialty-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Corporate Branding</h3>
+            <p>Professional identities for B2B companies, startups, and enterprises that command authority and trust.</p>
           </div>
-          <h3>Retail & E-Commerce</h3>
-          <p>Appealing brands for retail businesses and online stores that attract customers and drive sales.</p>
-        </div>
-
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="specialty-icon">
-            <i class="fas fa-utensils"></i>
+  
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="specialty-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3>Retail & E-Commerce</h3>
+            <p>Appealing brands for retail businesses and online stores that attract customers and drive sales.</p>
           </div>
-          <h3>Food & Beverage</h3>
-          <p>Appetizing brands for restaurants, cafes, and food products that make mouths water and create cravings.</p>
-        </div>
-
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="specialty-icon">
-            <i class="fas fa-heartbeat"></i>
+  
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="specialty-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Food & Beverage</h3>
+            <p>Appetizing brands for restaurants, cafes, and food products that make mouths water and create cravings.</p>
           </div>
-          <h3>Health & Wellness</h3>
-          <p>Trustworthy brands for healthcare, fitness, and wellness that communicate care and expertise.</p>
-        </div>
-
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="specialty-icon">
-            <i class="fas fa-rocket"></i>
+  
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="specialty-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Health & Wellness</h3>
+            <p>Trustworthy brands for healthcare, fitness, and wellness that communicate care and expertise.</p>
           </div>
-          <h3>Tech & Innovation</h3>
-          <p>Forward-thinking brands for technology companies and apps that showcase innovation and creativity.</p>
-        </div>
-
-        <div class="specialty-card" data-aos="fade-up" data-aos-delay="600">
-          <div class="specialty-icon">
-            <i class="fas fa-graduation-cap"></i>
+  
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="specialty-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Tech & Innovation</h3>
+            <p>Forward-thinking brands for technology companies and apps that showcase innovation and creativity.</p>
           </div>
-          <h3>Education & Non-Profit</h3>
-          <p>Inspiring brands for educational institutions and causes that drive engagement and support.</p>
+  
+          <div class="specialty-card" data-aos="fade-up" data-aos-delay="600">
+            <div class="specialty-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Education & Non-Profit</h3>
+            <p>Inspiring brands for educational institutions and causes that drive engagement and support.</p>
+          </div>
         </div>
       </div>
     </section>

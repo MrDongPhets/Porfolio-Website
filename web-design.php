@@ -68,54 +68,56 @@ include 'includes/site-header.php';
 
     <!-- UI/UX DESIGN PROCESS -->
     <section id="process" class="process-detailed-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Our UI/UX Design Process</h2>
-      </div>
-
-      <div class="process-detailed-grid">
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-search"></i>
-            </div>
-          </div>
-          <h3>1. Research & Define</h3>
-          <p>We start by knowing your business — its ambitions & challenges.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> User research & personas</li>
-            <li><i class="fas fa-check"></i> Competitor analysis</li>
-            <li><i class="fas fa-check"></i> Goals & KPIs definition</li>
-          </ul>
+      <div class="process-detailed-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Our UI/UX Design Process</h2>
         </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-lightbulb"></i>
+  
+        <div class="process-detailed-grid">
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-search"></i>
+              </div>
             </div>
+            <h3>1. Research & Define</h3>
+            <p>We start by knowing your business — its ambitions & challenges.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> User research & personas</li>
+              <li><i class="fas fa-check"></i> Competitor analysis</li>
+              <li><i class="fas fa-check"></i> Goals & KPIs definition</li>
+            </ul>
           </div>
-          <h3>2. Ideate & Prototype</h3>
-          <p>Transforming insights into tangible designs — Accelerate your growth.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Wireframing & flow mapping</li>
-            <li><i class="fas fa-check"></i> Interactive prototypes</li>
-            <li><i class="fas fa-check"></i> Design system creation</li>
-          </ul>
-        </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-check-circle"></i>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-lightbulb"></i>
+              </div>
             </div>
+            <h3>2. Ideate & Prototype</h3>
+            <p>Transforming insights into tangible designs — Accelerate your growth.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Wireframing & flow mapping</li>
+              <li><i class="fas fa-check"></i> Interactive prototypes</li>
+              <li><i class="fas fa-check"></i> Design system creation</li>
+            </ul>
           </div>
-          <h3>3. Refine & Validate</h3>
-          <p>Perfecting every pixel with real user feedback & user reviews.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Usability testing</li>
-            <li><i class="fas fa-check"></i> A/B testing & optimization</li>
-            <li><i class="fas fa-check"></i> Final polish & delivery</li>
-          </ul>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+            <h3>3. Refine & Validate</h3>
+            <p>Perfecting every pixel with real user feedback & user reviews.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Usability testing</li>
+              <li><i class="fas fa-check"></i> A/B testing & optimization</li>
+              <li><i class="fas fa-check"></i> Final polish & delivery</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -168,49 +170,51 @@ include 'includes/site-header.php';
 
     <!-- TECH STACK SECTION -->
     <section class="tech-stack-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Technologies We Master</h2>
-        <p class="section-subtitle">Modern tools and frameworks for cutting-edge web solutions</p>
-      </div>
-
-      <div class="tech-stack-grid">
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-          <h3><i class="fas fa-paint-brush"></i> Design Tools</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Figma</span>
-            <span class="tech-badge">Adobe XD</span>
-            <span class="tech-badge">Sketch</span>
-            <span class="tech-badge">InVision</span>
-          </div>
+      <div class="tech-stack-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Technologies We Master</h2>
+          <p class="section-subtitle">Modern tools and frameworks for cutting-edge web solutions</p>
         </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-          <h3><i class="fas fa-code"></i> Frontend</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">Vue.js</span>
-            <span class="tech-badge">Next.js</span>
-            <span class="tech-badge">TypeScript</span>
+  
+        <div class="tech-stack-grid">
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-paint-brush"></i> Design Tools</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Adobe XD</span>
+              <span class="tech-badge">Sketch</span>
+              <span class="tech-badge">InVision</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
-          <h3><i class="fas fa-server"></i> Backend</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Node.js</span>
-            <span class="tech-badge">PHP</span>
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">Laravel</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-code"></i> Frontend</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Vue.js</span>
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">TypeScript</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
-          <h3><i class="fas fa-database"></i> Database</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">MongoDB</span>
-            <span class="tech-badge">MySQL</span>
-            <span class="tech-badge">Supabase</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-server"></i> Backend</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Laravel</span>
+            </div>
+          </div>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
+            <h3><i class="fas fa-database"></i> Database</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">MongoDB</span>
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Supabase</span>
+            </div>
           </div>
         </div>
       </div>

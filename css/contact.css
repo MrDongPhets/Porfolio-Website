@@ -464,7 +464,7 @@
 /* Contact CTA Section */
 .contact-cta-section {
   max-width: 1200px;
-  margin: 0 auto 100px;
+  margin: 100px auto;
   padding: 80px min(2rem, 8%);
   background: var(--gradient-dark);
   border-radius: 30px;

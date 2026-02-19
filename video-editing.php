@@ -72,54 +72,56 @@ include 'includes/site-header.php';
 
     <!-- VIDEO PRODUCTION PROCESS -->
     <section id="process" class="process-detailed-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Our Video Production Process</h2>
-      </div>
-
-      <div class="process-detailed-grid">
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-file-video"></i>
-            </div>
-          </div>
-          <h3>1. Pre-Production</h3>
-          <p>Strategic planning and creative concepting to ensure your video hits the mark.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Scriptwriting & storyboarding</li>
-            <li><i class="fas fa-check"></i> Shot list creation</li>
-            <li><i class="fas fa-check"></i> Style & mood board development</li>
-          </ul>
+      <div class="process-detailed-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Our Video Production Process</h2>
         </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-cut"></i>
+  
+        <div class="process-detailed-grid">
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-file-video"></i>
+              </div>
             </div>
+            <h3>1. Pre-Production</h3>
+            <p>Strategic planning and creative concepting to ensure your video hits the mark.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Scriptwriting & storyboarding</li>
+              <li><i class="fas fa-check"></i> Shot list creation</li>
+              <li><i class="fas fa-check"></i> Style & mood board development</li>
+            </ul>
           </div>
-          <h3>2. Editing & Post</h3>
-          <p>Professional editing with color grading, sound design, and motion graphics.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Multi-cam & multi-format editing</li>
-            <li><i class="fas fa-check"></i> Color correction & grading</li>
-            <li><i class="fas fa-check"></i> Audio mixing & sound design</li>
-          </ul>
-        </div>
-
-        <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="process-step-number">
-            <div class="step-circle">
-              <i class="fas fa-rocket"></i>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-cut"></i>
+              </div>
             </div>
+            <h3>2. Editing & Post</h3>
+            <p>Professional editing with color grading, sound design, and motion graphics.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Multi-cam & multi-format editing</li>
+              <li><i class="fas fa-check"></i> Color correction & grading</li>
+              <li><i class="fas fa-check"></i> Audio mixing & sound design</li>
+            </ul>
           </div>
-          <h3>3. Delivery & Optimization</h3>
-          <p>Platform-optimized exports ready for distribution across all channels.</p>
-          <ul class="process-features">
-            <li><i class="fas fa-check"></i> Multiple format exports</li>
-            <li><i class="fas fa-check"></i> Platform-specific optimization</li>
-            <li><i class="fas fa-check"></i> Thumbnail & caption creation</li>
-          </ul>
+  
+          <div class="process-detailed-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-step-number">
+              <div class="step-circle">
+                <i class="fas fa-rocket"></i>
+              </div>
+            </div>
+            <h3>3. Delivery & Optimization</h3>
+            <p>Platform-optimized exports ready for distribution across all channels.</p>
+            <ul class="process-features">
+              <li><i class="fas fa-check"></i> Multiple format exports</li>
+              <li><i class="fas fa-check"></i> Platform-specific optimization</li>
+              <li><i class="fas fa-check"></i> Thumbnail & caption creation</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -243,49 +245,51 @@ include 'includes/site-header.php';
 
     <!-- EDITING TOOLS & SOFTWARE -->
     <section class="tech-stack-section">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">Professional Tools We Use</h2>
-        <p class="section-subtitle">Industry-standard software for broadcast-quality results</p>
-      </div>
-
-      <div class="tech-stack-grid">
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-          <h3><i class="fas fa-cut"></i> Video Editing</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Adobe Premiere Pro</span>
-            <span class="tech-badge">Final Cut Pro</span>
-            <span class="tech-badge">DaVinci Resolve</span>
-            <span class="tech-badge">After Effects</span>
-          </div>
+      <div class="tech-stack-section-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">Professional Tools We Use</h2>
+          <p class="section-subtitle">Industry-standard software for broadcast-quality results</p>
         </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-          <h3><i class="fas fa-palette"></i> Color Grading</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">DaVinci Resolve</span>
-            <span class="tech-badge">Lumetri Color</span>
-            <span class="tech-badge">FilmConvert</span>
-            <span class="tech-badge">Color Finale</span>
+  
+        <div class="tech-stack-grid">
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-cut"></i> Video Editing</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Adobe Premiere Pro</span>
+              <span class="tech-badge">Final Cut Pro</span>
+              <span class="tech-badge">DaVinci Resolve</span>
+              <span class="tech-badge">After Effects</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
-          <h3><i class="fas fa-volume-up"></i> Audio Production</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">Adobe Audition</span>
-            <span class="tech-badge">Logic Pro</span>
-            <span class="tech-badge">Izotope RX</span>
-            <span class="tech-badge">Soundstripe</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-palette"></i> Color Grading</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">DaVinci Resolve</span>
+              <span class="tech-badge">Lumetri Color</span>
+              <span class="tech-badge">FilmConvert</span>
+              <span class="tech-badge">Color Finale</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
-          <h3><i class="fas fa-magic"></i> Motion Graphics</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">After Effects</span>
-            <span class="tech-badge">Cinema 4D</span>
-            <span class="tech-badge">Blender</span>
-            <span class="tech-badge">Element 3D</span>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-volume-up"></i> Audio Production</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">Adobe Audition</span>
+              <span class="tech-badge">Logic Pro</span>
+              <span class="tech-badge">Izotope RX</span>
+              <span class="tech-badge">Soundstripe</span>
+            </div>
+          </div>
+  
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="400">
+            <h3><i class="fas fa-magic"></i> Motion Graphics</h3>
+            <div class="tech-badges">
+              <span class="tech-badge">After Effects</span>
+              <span class="tech-badge">Cinema 4D</span>
+              <span class="tech-badge">Blender</span>
+              <span class="tech-badge">Element 3D</span>
+            </div>
           </div>
         </div>
       </div>
@@ -448,83 +452,85 @@ include 'includes/site-header.php';
 
     <!-- TESTIMONIALS SECTION -->
     <section class="testimonials-modern">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="section-title-modern">What Creators Say</h2>
-        <p class="section-subtitle">Trusted by content creators and brands worldwide</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-            </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"They turned my raw footage into viral gold! My engagement increased 300% after they started editing my Reels. They just GET what works on social media."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">SM</div>
-            </div>
-            <div class="author-info">
-              <h4>Sarah Mitchell</h4>
-              <p>Content Creator | 500K followers</p>
-            </div>
-          </div>
+      <div class="testimonials-modern-container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title-modern">What Creators Say</h2>
+          <p class="section-subtitle">Trusted by content creators and brands worldwide</p>
         </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+        <div class="testimonials-grid">
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
+            
+            <p class="testimonial-text">"They turned my raw footage into viral gold! My engagement increased 300% after they started editing my Reels. They just GET what works on social media."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">SM</div>
+              </div>
+              <div class="author-info">
+                <h4>Sarah Mitchell</h4>
+                <p>Content Creator | 500K followers</p>
+              </div>
+            </div>
           </div>
-          
-          <p class="testimonial-text">"Professional, fast, and creative. They handle all our YouTube content and we've seen a 45% increase in watch time. Best investment we've made."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">JC</div>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <div class="author-info">
-              <h4>James Chen</h4>
-              <p>Tech Channel | 2M subscribers</p>
+            
+            <p class="testimonial-text">"Professional, fast, and creative. They handle all our YouTube content and we've seen a 45% increase in watch time. Best investment we've made."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">JC</div>
+              </div>
+              <div class="author-info">
+                <h4>James Chen</h4>
+                <p>Tech Channel | 2M subscribers</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
-          <div class="testimonial-rating">
-            <div class="rating-stars">
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
-              <i class="fas fa-star active"></i>
+  
+          <div class="testimonial-card-modern" data-aos="fade-up" data-aos-delay="300">
+            <div class="testimonial-rating">
+              <div class="rating-stars">
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+                <i class="fas fa-star active"></i>
+              </div>
+              <span class="rating-number">5.0</span>
             </div>
-            <span class="rating-number">5.0</span>
-          </div>
-          
-          <p class="testimonial-text">"Our product launch video exceeded all expectations. The motion graphics and color grading were stunning. Generated over $100K in sales in the first week."</p>
-          
-          <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-placeholder">ER</div>
-            </div>
-            <div class="author-info">
-              <h4>Emily Rodriguez</h4>
-              <p>Marketing Director | E-commerce</p>
+            
+            <p class="testimonial-text">"Our product launch video exceeded all expectations. The motion graphics and color grading were stunning. Generated over $100K in sales in the first week."</p>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <div class="avatar-placeholder">ER</div>
+              </div>
+              <div class="author-info">
+                <h4>Emily Rodriguez</h4>
+                <p>Marketing Director | E-commerce</p>
+              </div>
             </div>
           </div>
         </div>
