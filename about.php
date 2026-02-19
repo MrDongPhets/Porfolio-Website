@@ -124,7 +124,7 @@ include 'includes/site-header.php';
     </section> -->
 
     <!-- MUSTARD CORE VALUES -->
-    <!-- <section class="awards-section">
+    <section class="awards-section">
       <div class="awards-section-container">
         <div class="section-header" data-aos="fade-up">
           <h2 class="section-title-modern">MUSTARD Core Values</h2>
@@ -201,7 +201,7 @@ include 'includes/site-header.php';
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- OUR STORY SECTION -->
     <section class="our-story-section">

@@ -16,6 +16,10 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
 
   
   <script>
+    // Run on load
+$(document).ready(function () {
+  updateAOSGlobal();
+});
     // Initialize AOS
     AOS.init({
       duration: 800,
@@ -25,13 +29,41 @@ $siteName = getSetting('site_name', 'MUSTARD DIGITALS');
     });
 
 
-        $(window).scroll(function() {
+    $(window).scroll(function() {
         if ($(this).scrollTop() > 50) {
             $('#nav').addClass('scrolled');
         } else {
             $('#nav').removeClass('scrolled');
         }
     });
+
+        function updateAOSGlobal() {
+  const isMobile = $(window).width() < 768;
+
+  $('[data-aos]').each(function () {
+    const $el = $(this);
+    const anim = $el.attr('data-aos');
+
+    if (isMobile) {
+      if (anim === 'fade-left' || anim === 'fade-right') {
+        $el.attr('data-aos', 'fade-up');
+      }
+    }
+  });
+
+  if (typeof AOS !== 'undefined') {
+    AOS.refreshHard();
+  }
+}
+
+
+
+// Run on resize (debounced)
+let resizeTimeout;
+$(window).on('resize', function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(updateAOSGlobal, 200);
+});
 
     // Add nav scroll styles
     if (!$('#nav-scroll-styles').length) {
