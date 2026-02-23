@@ -76,7 +76,7 @@ $(window).on('resize', function () {
                     background-color: var(--header-bg);
                     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
                     transition: transform 0.3s ease;
-                        transition: all 0.3s ease-in-out
+                    transition: all 0.3s ease-in-out
                 }
                 body.light-mode #nav.scrolled {
                     background: rgba(255, 255, 255, 0.95);
