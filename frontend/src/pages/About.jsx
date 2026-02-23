@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/about.css';
 import about from '../assets/hero.png';
@@ -29,6 +30,7 @@ const CORE_VALUES = [
 
 export default function About() {
   const navigate = useNavigate();
+  useEffect(() => { document.title = 'About | MUSTARD Digitals'; }, []);
 
   return (
     <main>

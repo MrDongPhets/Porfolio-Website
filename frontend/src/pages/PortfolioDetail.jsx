@@ -29,6 +29,7 @@ export default function PortfolioDetail() {
     getPortfolioDetail(id)
       .then(data => {
         setItem(data.data);
+        document.title = `${data.data.title} | MUSTARD Digitals`;
         setRelated(data.related || []);
         setError('');
         setLoading(false);

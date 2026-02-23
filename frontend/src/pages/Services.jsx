@@ -16,6 +16,8 @@ export default function Services() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  useEffect(() => { document.title = 'Services | MUSTARD Digitals'; }, []);
+
   useEffect(() => {
     getServices()
       .then(data => setServices(data.data?.length ? data.data : STATIC_SERVICES))

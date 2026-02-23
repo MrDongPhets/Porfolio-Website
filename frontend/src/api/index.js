@@ -16,7 +16,7 @@ async function request(url) {
 
 /** GET /api/home.php — all homepage data in one request */
 export function getHomeData() {
-  return request(`${BASE}/home.php`);
+  return request(`${BASE}/home`);
 }
 
 /** GET /api/portfolio.php — all portfolio items + categories
@@ -26,17 +26,17 @@ export function getPortfolio(category = 'all') {
   const params = category && category !== 'all'
     ? `?category=${encodeURIComponent(category)}`
     : '';
-  return request(`${BASE}/portfolio.php${params}`);
+  return request(`${BASE}/portfolio${params}`);
 }
 
 /** GET /api/portfolio-detail.php?id= — single item + related */
 export function getPortfolioDetail(id) {
-  return request(`${BASE}/portfolio-detail.php?id=${encodeURIComponent(id)}`);
+  return request(`${BASE}/portfolio-detail?id=${encodeURIComponent(id)}`);
 }
 
 /** GET /api/services.php — all active services */
 export function getServices() {
-  return request(`${BASE}/services.php`);
+  return request(`${BASE}/services`);
 }
 
 /** GET /api/testimonials.php — active testimonials
@@ -44,14 +44,14 @@ export function getServices() {
  */
 export function getTestimonials(limit = null) {
   const params = limit ? `?limit=${limit}` : '';
-  return request(`${BASE}/testimonials.php${params}`);
+  return request(`${BASE}/testimonials${params}`);
 }
 
 /** POST /api/contact.php — submit contact form
  *  @param {{ name, email, phone, service, message, newsletter }} data
  */
 export async function submitContact(data) {
-  const res = await fetch(`${BASE}/contact.php`, {
+  const res = await fetch(`${BASE}/contact`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString(),

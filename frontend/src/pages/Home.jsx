@@ -53,6 +53,8 @@ function getInitials(name) {
 export default function Home() {
   const navigate = useNavigate();
   const [data, setData] = useState(null);
+  const [dataLoading, setDataLoading] = useState(true);
+  useEffect(() => { document.title = 'MUSTARD Digitals — Creative Design Studio'; }, []);
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sending, setSending] = useState(false);
@@ -61,7 +63,8 @@ export default function Home() {
   useEffect(() => {
     getHomeData()
       .then(d => setData(d))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setDataLoading(false));
   }, []);
 
   function handleContactChange(e) {
@@ -205,8 +208,14 @@ export default function Home() {
           <p className="section-subtitle">Explore our latest projects and creative solutions</p>
         </div>
 
+        {dataLoading && (
+          <div style={{ textAlign: 'center', padding: '48px', color: 'var(--muted)' }}>
+            <i className="fas fa-spinner fa-spin" style={{ fontSize: '32px' }}></i>
+          </div>
+        )}
+
         <div className="portfolio-grid-modern">
-          {portfolioItems.length > 0 ? portfolioItems.map((item, index) => (
+          {!dataLoading && portfolioItems.length > 0 ? portfolioItems.map((item, index) => (
             <div className="portfolio-card-modern" key={item.id} data-aos="zoom-in" data-aos-delay={`${index * 100}`}>
               <div className="portfolio-image-wrapper">
                 <img src={item.image_url} alt={item.title} />
@@ -236,7 +245,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          )) : (
+          )) : !dataLoading ? (
             [
               { id: 1, img: '/assets/hero.png', cat: 'UI/UX DESIGN', title: 'Fintech Design - Google Study', desc: 'Modern fintech application design with seamless user experience' },
               { id: 2, img: '/assets/about-2.png', cat: 'BRANDING', title: 'Cosmetic - Brand Design', desc: 'Complete brand identity for a modern cosmetic line' },
@@ -263,7 +272,7 @@ export default function Home() {
                 </div>
               </div>
             ))
-          )}
+          ) : null}
         </div>
 
         <div className="text-center" data-aos="fade-up" style={{ marginTop: '48px' }}>

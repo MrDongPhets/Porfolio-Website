@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../styles/nav.css';
+import logo from '../assets/mustard.png'
 
 const SERVICES = [
   { name: 'Web Design & Development',   path: '/services/web-design',        icon: 'fa-laptop-code',  desc: 'Custom websites & web applications' },
@@ -51,7 +52,7 @@ export default function Navbar() {
         <div className="brand">
           <Link to="/">
             <div className="logo-img">
-              <img src="/assets/mustard.png" alt="Mustard Digitals" />
+              <img src={logo} alt="Mustard Digitals" />
             </div>
           </Link>
         </div>

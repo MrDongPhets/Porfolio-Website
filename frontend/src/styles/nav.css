@@ -129,8 +129,9 @@ nav.main-nav {
 }
 
 .dropdown-item:hover {
-  background: var(--gray-100);
-  color: var(--text);
+background: var(--accent-2);
+    border-color: var(--primary);
+    transform: translateX(4px)
 }
 
 .dropdown-icon {

@@ -12,7 +12,7 @@
  *  testimonials [{ initials, text, name, role }]
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/service-detail.css';
 
@@ -63,6 +63,7 @@ export default function ServiceDetailLayout({
   testimonials,
 }) {
   const navigate = useNavigate();
+  useEffect(() => { document.title = `${hero.title} | MUSTARD Digitals`; }, [hero.title]);
 
   return (
     <main>

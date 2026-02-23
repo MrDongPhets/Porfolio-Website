@@ -304,14 +304,14 @@ For each page:
 ## Phase 4 — Polish & QA
 **Goal:** Make sure the React app matches the current PHP site in quality and behaviour.
 
-- [ ] AOS (Animate on Scroll) — install `aos` npm package and initialise in `App.jsx`
-- [ ] FontAwesome — add CDN link to `index.html` or install `@fortawesome/react-fontawesome`
-- [ ] Page titles — use `document.title` or install `react-helmet-async` per page
-- [ ] 404 page — add a `<Route path="*">` catch-all
-- [ ] Loading states — show skeleton/spinner while API data loads
-- [ ] Error states — show user-friendly message if API call fails
+- [x] AOS (Animate on Scroll) — install `aos` npm package and initialise in `App.jsx`
+- [x] FontAwesome — add CDN link to `index.html` or install `@fortawesome/react-fontawesome`
+- [x] Page titles — `document.title` set via `useEffect` on every page (dynamic on PortfolioDetail)
+- [x] 404 page — `<Route path="*">` catch-all added
+- [x] Loading states — spinner on Home portfolio section, Portfolio page, PortfolioDetail
+- [x] Error states — user-friendly messages on Portfolio, PortfolioDetail, Contact form
 - [ ] Mobile responsive — verify every page at 375px, 768px, 1280px
-- [ ] Dark mode — port `[data-theme="dark"]` toggle logic to React state
+- [x] Dark mode — `[data-theme]` toggle in Navbar; flash fixed via inline script in `index.html`
 
 ---
 
@@ -337,5 +337,5 @@ For each page:
 | Phase 1 — PHP API Layer | ✅ Done |
 | Phase 2 — React Scaffold | ✅ Done |
 | Phase 3 — Page Migration | ✅ Done |
-| Phase 4 — Polish & QA | ⬜ Not started |
+| Phase 4 — Polish & QA | 🔄 In progress (mobile responsive remaining) |
 | Phase 5 — Deploy | ⬜ Not started |

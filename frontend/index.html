@@ -14,7 +14,8 @@
 
     <title>MUSTARD Digitals</title>
   </head>
-  <body data-theme="light">
+  <body>
+  <script>document.body.setAttribute('data-theme', localStorage.getItem('md-theme') || 'dark');</script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

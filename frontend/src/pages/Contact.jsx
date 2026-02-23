@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { submitContact } from '../api/index.js';
 import '../styles/contact.css';
 
 export default function Contact() {
+  useEffect(() => { document.title = 'Contact | MUSTARD Digitals'; }, []);
   const [form, setForm] = useState({
     name: '', email: '', phone: '', service: '', message: '', newsletter: false,
   });
